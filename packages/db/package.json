@@ -1,0 +1,21 @@
+{
+	"name": "@repo/db",
+	"exports": {
+		".": "./src/index.ts",
+		"./users": "./src/types/users.ts"
+	},
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"build": "tsc"
+	},
+	"dependencies": {
+		"dotenv": "^16.5.0",
+		"drizzle-orm": "^0.44.2",
+		"pg": "^8.16.0"
+	},
+	"devDependencies": {
+		"@types/node": "^20.19.0",
+		"drizzle-kit": "^0.31.1"
+	}
+}

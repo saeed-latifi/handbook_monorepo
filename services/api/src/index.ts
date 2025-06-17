@@ -1,4 +1,5 @@
 import { serve } from "@hono/node-server";
+import type { INewUser, IUser, IUserU } from "@repo/db/users";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 
@@ -17,9 +18,15 @@ app.use(
 );
 
 app.get("/", (c) => {
-	return c.json({ myData: "13" });
+	return c.json(newUser());
 });
 
 serve({ fetch: app.fetch, port: 3010 }, (info) => {
 	console.log(`Server is running on http://localhost:${info.port}`);
 });
+
+function newUser() {
+	const newUser: INewUser = { age: 32, email: "qweqwe", name: "234rwefsd" };
+	console.log(newUser);
+	return newUser;
+}
