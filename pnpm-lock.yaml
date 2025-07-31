@@ -18,11 +18,49 @@ importers:
         specifier: 5.8.2
         version: 5.8.2
 
+  api/rest:
+    dependencies:
+      '@hono/node-server':
+        specifier: ^1.14.4
+        version: 1.14.4(hono@4.7.11)
+      '@repo/db':
+        specifier: workspace:*
+        version: link:../../shared/db
+      hono:
+        specifier: ^4.7.11
+        version: 4.7.11
+    devDependencies:
+      '@types/node':
+        specifier: ^20.11.17
+        version: 20.19.1
+      tsx:
+        specifier: ^4.7.1
+        version: 4.20.3
+      typescript:
+        specifier: ^5.8.3
+        version: 5.8.3
+
+  api/socket:
+    dependencies:
+      socket.io:
+        specifier: ^4.8.1
+        version: 4.8.1
+    devDependencies:
+      '@types/node':
+        specifier: ^20.11.17
+        version: 20.19.1
+      tsx:
+        specifier: ^4.7.1
+        version: 4.20.3
+      typescript:
+        specifier: ^5.8.3
+        version: 5.8.3
+
   apps/blog:
     dependencies:
       '@repo/ui':
         specifier: workspace:*
-        version: link:../../packages/ui
+        version: link:../../shared/ui
       '@solidjs/meta':
         specifier: ^0.29.4
         version: 0.29.4(solid-js@1.9.7)
@@ -47,16 +85,16 @@ importers:
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
-        version: link:../../packages/eslint-config
+        version: link:../../config/eslint-config
       '@repo/tailwind-config':
         specifier: workspace:*
-        version: link:../../packages/tailwind-config
+        version: link:../../config/tailwind-config
 
   apps/shop:
     dependencies:
       '@repo/ui':
         specifier: workspace:*
-        version: link:../../packages/ui
+        version: link:../../shared/ui
       '@solidjs/meta':
         specifier: ^0.29.4
         version: 0.29.4(solid-js@1.9.7)
@@ -84,35 +122,19 @@ importers:
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
-        version: link:../../packages/eslint-config
+        version: link:../../config/eslint-config
       '@repo/tailwind-config':
         specifier: workspace:*
-        version: link:../../packages/tailwind-config
+        version: link:../../config/tailwind-config
 
-  packages/db:
-    dependencies:
-      dotenv:
-        specifier: ^16.5.0
-        version: 16.5.0
-      drizzle-orm:
-        specifier: ^0.44.2
-        version: 0.44.2(pg@8.16.0)(postgres@3.4.7)
-      pg:
-        specifier: ^8.16.0
-        version: 8.16.0
-    devDependencies:
-      '@types/node':
-        specifier: ^20.19.0
-        version: 20.19.1
-      drizzle-kit:
-        specifier: ^0.31.1
-        version: 0.31.1
-
-  packages/eslint-config:
+  config/eslint-config:
     dependencies:
       '@eslint/eslintrc':
         specifier: ^3.3.0
         version: 3.3.1
+      '@eslint/js':
+        specifier: ^9.32.0
+        version: 9.32.0
       eslint-config-prettier:
         specifier: ^10.0.2
         version: 10.1.5(eslint@9.29.0(jiti@2.4.2))
@@ -139,7 +161,7 @@ importers:
         specifier: ^8.25.0
         version: 8.34.1(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3)
 
-  packages/tailwind-config:
+  config/tailwind-config:
     dependencies:
       tailwindcss:
         specifier: ^4.0.9
@@ -152,7 +174,26 @@ importers:
         specifier: workspace:*
         version: link:../eslint-config
 
-  packages/ui:
+  shared/db:
+    dependencies:
+      dotenv:
+        specifier: ^16.5.0
+        version: 16.5.0
+      drizzle-orm:
+        specifier: ^0.44.2
+        version: 0.44.2(pg@8.16.0)(postgres@3.4.7)
+      pg:
+        specifier: ^8.16.0
+        version: 8.16.0
+    devDependencies:
+      '@types/node':
+        specifier: ^20.19.0
+        version: 20.19.1
+      drizzle-kit:
+        specifier: ^0.31.1
+        version: 0.31.1
+
+  shared/ui:
     dependencies:
       clsx:
         specifier: ^2.1.1
@@ -172,48 +213,10 @@ importers:
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
-        version: link:../eslint-config
+        version: link:../../config/eslint-config
       '@repo/tailwind-config':
         specifier: workspace:*
-        version: link:../tailwind-config
-
-  services/api:
-    dependencies:
-      '@hono/node-server':
-        specifier: ^1.14.4
-        version: 1.14.4(hono@4.7.11)
-      '@repo/db':
-        specifier: workspace:*
-        version: link:../../packages/db
-      hono:
-        specifier: ^4.7.11
-        version: 4.7.11
-    devDependencies:
-      '@types/node':
-        specifier: ^20.11.17
-        version: 20.19.1
-      tsx:
-        specifier: ^4.7.1
-        version: 4.20.3
-      typescript:
-        specifier: ^5.8.3
-        version: 5.8.3
-
-  services/socket:
-    dependencies:
-      socket.io:
-        specifier: ^4.8.1
-        version: 4.8.1
-    devDependencies:
-      '@types/node':
-        specifier: ^20.11.17
-        version: 20.19.1
-      tsx:
-        specifier: ^4.7.1
-        version: 4.20.3
-      typescript:
-        specifier: ^5.8.3
-        version: 5.8.3
+        version: link:../../config/tailwind-config
 
 packages:
 
@@ -700,6 +703,10 @@ packages:
 
   '@eslint/js@9.29.0':
     resolution: {integrity: sha512-3PIF4cBw/y+1u2EazflInpV+lYsSG0aByVIQzAgb1m1MhHFSbqTyNqtBKHgWf/9Ykud+DhILS9EGkmekVhbKoQ==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@eslint/js@9.32.0':
+    resolution: {integrity: sha512-BBpRFZK3eX6uMLKz8WxFOBIFFcGFJ/g8XuwjTHCqHROSIsopI+ddn/d5Cfh36+7+e5edVS8dbSHnBNhrLEX0zg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/object-schema@2.1.6':
@@ -4664,6 +4671,8 @@ snapshots:
       - supports-color
 
   '@eslint/js@9.29.0': {}
+
+  '@eslint/js@9.32.0': {}
 
   '@eslint/object-schema@2.1.6': {}
 
