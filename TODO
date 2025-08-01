@@ -1,0 +1,1 @@
+1- relocate .env to static-config or remove static-config and local .env for each package ? 

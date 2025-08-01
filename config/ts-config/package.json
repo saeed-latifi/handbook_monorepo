@@ -1,0 +1,7 @@
+{
+	"name": "@repo/ts-config",
+	"type": "module",
+	"files": [
+		"tsconfig.base.json"
+	]
+}

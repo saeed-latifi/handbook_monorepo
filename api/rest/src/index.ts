@@ -1,5 +1,5 @@
 import { serve } from "@hono/node-server";
-import type { INewUser, IUser, IUserU } from "@repo/db/users";
+import type { INewUser } from "@repo/db/users";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 

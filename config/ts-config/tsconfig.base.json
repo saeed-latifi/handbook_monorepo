@@ -1,0 +1,32 @@
+{
+	"compilerOptions": {
+		"module": "es6",
+		"target": "es6",
+		//
+		"moduleResolution": "bundler",
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"composite": true, // Important for turborepo caching
+		"incremental": true, // Improves build performance
+		"types": ["node"],
+		//
+		"declaration": true,
+		"strictNullChecks": true,
+		"noUncheckedIndexedAccess": true,
+		"useDefineForClassFields": true,
+		"allowImportingTsExtensions": true,
+		"isolatedModules": true,
+		"moduleDetection": "force",
+		"noEmit": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUncheckedSideEffectImports": true,
+		"verbatimModuleSyntax": true,
+		"jsx": "preserve",
+		"jsxImportSource": "solid-js"
+		// "declarationMap": true,
+	}
+}
