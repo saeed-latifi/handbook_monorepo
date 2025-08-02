@@ -1,5 +1,5 @@
 import { defineConfig } from "drizzle-kit";
-import { dbURL } from "@repo/static-config";
+import { dbURL } from "@repo/config-static";
 
 export default defineConfig({
 	out: "./drizzle",

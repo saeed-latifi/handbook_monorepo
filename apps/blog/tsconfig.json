@@ -1,15 +1,7 @@
 {
+	"extends": "@repo/config-ts/config",
+
 	"compilerOptions": {
-		"target": "ESNext",
-		"module": "ESNext",
-		"moduleResolution": "bundler",
-		"allowSyntheticDefaultImports": true,
-		"esModuleInterop": true,
-		"jsx": "preserve",
-		"jsxImportSource": "solid-js",
-		"strict": true,
-		"noEmit": true,
-		"types": ["vinxi/types/client"],
-		"isolatedModules": true
+		"types": ["vinxi/types/client"]
 	}
 }

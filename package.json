@@ -4,6 +4,7 @@
 	"scripts": {
 		"build": "dotenv -- turbo run build",
 		"dev": "dotenv -- turbo run dev",
+		"start": "dotenv -- turbo run start",
 		"generate": "dotenv -- turbo run generate",
 		"migrate": "dotenv -- turbo run migrate",
 		"lint": "dotenv -- turbo run lint",

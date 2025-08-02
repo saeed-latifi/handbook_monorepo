@@ -1,7 +1,10 @@
 {
-	"name": "@repo/static-config",
+	"name": "@repo/config-static",
 	"main": "./src/index.ts",
 	"type": "module",
+	"exports": {
+		".": "./src/index.ts"
+	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "tsc"
@@ -12,6 +15,6 @@
 	},
 	"devDependencies": {
 		"@types/node": "^22.1.0",
-		"@repo/ts-config": "workspace:*"
+		"@repo/config-ts": "workspace:*"
 	}
 }

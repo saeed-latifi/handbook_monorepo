@@ -1,39 +1,5 @@
 {
-	"compilerOptions": {
-		"target": "es2022",
-		// "composite": true, // Required for project references
-		// "declaration": true, // Generate .d.ts files
-		// "declarationMap": true, // Source maps for declarations
-
-		// Important for Drizzle type inference
-		"strictNullChecks": true,
-		"noUncheckedIndexedAccess": true,
-		// ****
-
-		"useDefineForClassFields": true,
-		"module": "es2015",
-		"lib": ["ES2020", "DOM", "DOM.Iterable"],
-		"skipLibCheck": true,
-		/* Bundler mode */
-		"moduleResolution": "bundler",
-		"allowImportingTsExtensions": true,
-		"isolatedModules": true,
-		"moduleDetection": "force",
-		"noEmit": true,
-		"jsx": "preserve",
-		"jsxImportSource": "solid-js",
-		/* Linting */
-		"strict": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"noFallthroughCasesInSwitch": true,
-		"noUncheckedSideEffectImports": true,
-		"esModuleInterop": true,
-		// ***************
-
-		"verbatimModuleSyntax": true,
-		"types": ["node"]
-	},
+	"extends": "@repo/config-ts/config",
 	"include": ["src/**/*", "drizzle.config.ts"],
 	"exclude": ["node_modules", "dist", "**/*.test.ts"]
 }

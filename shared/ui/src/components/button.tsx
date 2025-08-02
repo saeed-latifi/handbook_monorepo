@@ -9,7 +9,7 @@ export function Button(props: any) {
 	return (
 		<button class={cn("flex items-center  justify-center gap-3  outline-none cursor-pointer p-4 rounded-sm  text-[1rem] w-full mx-auto bg-blue-700 border-green-500", local?.class)} {...others}>
 			{local.children}
-			<span class="flex ">w</span>
+			<span class="flex ml-4">ok</span>
 		</button>
 	);
 }

@@ -1,14 +1,13 @@
 {
-	"name": "@repo/blog",
+	"name": "@repo/app-blog",
 	"type": "module",
 	"scripts": {
 		"dev": "vinxi dev --port 3000",
 		"build": "vinxi build",
-		"start": "vinxi start --port 3000",
-		"version": "vinxi version"
+		"start": "vinxi start --port 3000"
 	},
 	"dependencies": {
-		"@repo/ui": "workspace:*",
+		"@repo/shared-ui": "workspace:*",
 		"@solidjs/meta": "^0.29.4",
 		"@solidjs/router": "^0.15.0",
 		"@solidjs/start": "^1.1.0",
@@ -18,10 +17,8 @@
 		"@tailwindcss/vite": "^4.0.9"
 	},
 	"devDependencies": {
-		"@repo/eslint-config": "workspace:*",
-		"@repo/tailwind-config": "workspace:*"
-	},
-	"engines": {
-		"node": ">=22"
+		"@repo/config-ts": "workspace:*",
+		"@repo/config-eslint": "workspace:*",
+		"@repo/config-tailwind": "workspace:*"
 	}
 }

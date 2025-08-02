@@ -1,16 +1,16 @@
 {
-	"name": "@repo/socket",
+	"name": "@repo/api-socket",
 	"type": "module",
 	"scripts": {
 		"dev": "tsx watch src/index.ts",
 		"build": "tsc",
-		"start": "node dist/index.js"
+		"start": "tsx src/index.ts"
 	},
 	"dependencies": {
 		"socket.io": "^4.8.1"
 	},
 	"devDependencies": {
-		"@repo/ts-config": "workspace:*",
+		"@repo/config-ts": "workspace:*",
 		"@types/node": "^20.11.17",
 		"tsx": "^4.7.1",
 		"typescript": "^5.8.3"

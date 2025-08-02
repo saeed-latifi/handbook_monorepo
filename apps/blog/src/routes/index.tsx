@@ -1,5 +1,5 @@
+import { Button } from "@repo/shared-ui/button";
 import { Title } from "@solidjs/meta";
-import { Button } from "@repo/ui/button";
 
 export default function Home() {
 	return (

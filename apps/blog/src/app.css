@@ -1,3 +1,5 @@
 @import "tailwindcss";
-@import "@repo/tailwind-config/styles.css";
-@source '../../../packages/ui';
+@import "@repo/config-tailwind/styles.css";
+
+/* important to compile shared style  */
+@source '../../../shared/ui';

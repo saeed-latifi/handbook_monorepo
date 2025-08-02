@@ -1,14 +1,13 @@
 {
-	"name": "@repo/shop",
+	"name": "@repo/app-shop",
 	"type": "module",
 	"scripts": {
 		"dev": "vinxi dev --port 3001",
 		"build": "vinxi build",
-		"start": "vinxi start --port 3001",
-		"version": "vinxi version"
+		"start": "vinxi start --port 3001"
 	},
 	"dependencies": {
-		"@repo/ui": "workspace:*",
+		"@repo/shared-ui": "workspace:*",
 		"@solidjs/meta": "^0.29.4",
 		"@solidjs/router": "^0.15.0",
 		"@solidjs/start": "^1.1.0",
@@ -19,10 +18,8 @@
 		"socket.io-client": "^4.7.5"
 	},
 	"devDependencies": {
-		"@repo/eslint-config": "workspace:*",
-		"@repo/tailwind-config": "workspace:*"
-	},
-	"engines": {
-		"node": ">=22"
+		"@repo/config-ts": "workspace:*",
+		"@repo/config-eslint": "workspace:*",
+		"@repo/config-tailwind": "workspace:*"
 	}
 }

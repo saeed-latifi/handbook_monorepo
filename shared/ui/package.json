@@ -1,6 +1,5 @@
 {
-	"name": "@repo/ui",
-	"version": "1.0.0",
+	"name": "@repo/shared-ui",
 	"type": "module",
 	"sideEffects": [
 		"**/*.css"
@@ -10,12 +9,10 @@
 		".": "./src/index.ts",
 		"./button": "./src/components/button.tsx"
 	},
-	"scripts": {
-		"lint": "eslint . --max-warnings 0"
-	},
 	"devDependencies": {
-		"@repo/eslint-config": "workspace:*",
-		"@repo/tailwind-config": "workspace:*"
+		"@repo/config-ts": "workspace:*",
+		"@repo/config-eslint": "workspace:*",
+		"@repo/config-tailwind": "workspace:*"
 	},
 	"dependencies": {
 		"eslint": "^9.21.0",

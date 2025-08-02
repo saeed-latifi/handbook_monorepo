@@ -1,4 +1,4 @@
-import { dbURL } from "@repo/static-config";
+import { dbURL } from "@repo/config-static";
 import { drizzle } from "drizzle-orm/node-postgres";
 
 export const db = drizzle(dbURL);

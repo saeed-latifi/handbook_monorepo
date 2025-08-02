@@ -1,0 +1,10 @@
+{
+	"name": "@repo/config-ts",
+	"type": "module",
+	"exports": {
+		"./config": "./tsconfig.base.json"
+	},
+	"files": [
+		"tsconfig.base.json"
+	]
+}

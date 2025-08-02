@@ -1,3 +1,3 @@
-import { config } from '@repo/eslint-config/index.ts';
+import { config } from "@repo/config-eslint-config/index.ts";
 
 export default config;
