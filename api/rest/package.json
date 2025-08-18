@@ -1,5 +1,5 @@
 {
-	"name": "@repo/api-res",
+	"name": "@repo/api-rest",
 	"type": "module",
 	"scripts": {
 		"dev": "tsx watch src/index.ts",
@@ -7,8 +7,9 @@
 		"start": "tsx src/index.ts"
 	},
 	"dependencies": {
-		"@repo/shared-db": "workspace:*",
 		"@hono/node-server": "^1.14.4",
+		"@repo/shared-db": "workspace:*",
+		"@repo/shared-storage": "workspace:*",
 		"hono": "^4.7.11"
 	},
 	"devDependencies": {

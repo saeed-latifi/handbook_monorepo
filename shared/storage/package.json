@@ -1,0 +1,19 @@
+{
+	"name": "@repo/shared-storage",
+	"exports": {
+		".": "./src/index.ts"
+	},
+	"type": "module",
+	"scripts": {
+		"build": "tsc"
+	},
+	"dependencies": {
+		"@repo/config-static": "workspace:*",
+		"@repo/config-ts": "workspace:*",
+		"minio": "^8.0.5"
+	},
+	"devDependencies": {
+		"@types/node": "^20.19.0",
+		"drizzle-kit": "^0.31.1"
+	}
+}
