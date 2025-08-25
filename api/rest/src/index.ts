@@ -1,6 +1,6 @@
 import { serve } from "@hono/node-server";
 import type { INewUser } from "@repo/shared-db/users";
-import { createSubFolder, getContentList, onStorageInit } from "@repo/shared-storage";
+import { getContentList, onStorageInit } from "@repo/shared-storage";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 
