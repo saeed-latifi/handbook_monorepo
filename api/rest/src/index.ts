@@ -1,11 +1,12 @@
 import { serve } from "@hono/node-server";
 import type { INewUser } from "@repo/shared-db/users";
-import { onStorageInit } from "@repo/shared-storage";
+import { createSubFolder, getContentList, onStorageInit } from "@repo/shared-storage";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 
 const app = new Hono();
-onStorageInit();
+onStorageInit("red");
+test();
 
 app.use(
 	"/*",
@@ -19,7 +20,8 @@ app.use(
 	}),
 );
 
-app.get("/", (c) => {
+app.get("/", async (c) => {
+	await test();
 	return c.json(newUser());
 });
 
@@ -31,4 +33,10 @@ function newUser() {
 	const newUser: INewUser = { age: 32, email: "qweqwe", name: "234rwefsd" };
 	console.log(newUser);
 	return newUser;
+}
+
+async function test() {
+	const data = await getContentList({ bucketName: "red" });
+	// const w = await createSubFolder({ bucketName: "red", folders: ["ee", "ff"], parents: ["a", "b", "c"] });
+	console.log({ data });
 }

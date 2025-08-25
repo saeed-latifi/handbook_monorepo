@@ -180,10 +180,6 @@ importers:
         version: 8.34.1(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3)
 
   config/static:
-    dependencies:
-      dotenv:
-        specifier: ^16.5.0
-        version: 16.5.0
     devDependencies:
       '@repo/config-ts':
         specifier: workspace:*
@@ -274,6 +270,19 @@ importers:
       '@repo/config-ts':
         specifier: workspace:*
         version: link:../../config/tsconfig
+
+  shared/utils:
+    dependencies:
+      '@repo/config-ts':
+        specifier: workspace:*
+        version: link:../../config/tsconfig
+    devDependencies:
+      '@types/node':
+        specifier: ^20.19.0
+        version: 20.19.1
+      drizzle-kit:
+        specifier: ^0.31.1
+        version: 0.31.1
 
 packages:
 

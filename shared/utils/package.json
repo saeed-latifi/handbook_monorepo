@@ -1,0 +1,17 @@
+{
+	"name": "@repo/shared-utils",
+	"exports": {
+		".": "./src/index.ts"
+	},
+	"type": "module",
+	"scripts": {
+		"build": "tsc"
+	},
+	"dependencies": {
+		"@repo/config-ts": "workspace:*"
+	},
+	"devDependencies": {
+		"@types/node": "^20.19.0",
+		"drizzle-kit": "^0.31.1"
+	}
+}
