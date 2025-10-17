@@ -1,0 +1,5 @@
+{
+	"extends": "@repo/config-ts/config",
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "dist", "**/*.test.ts"]
+}

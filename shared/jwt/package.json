@@ -1,5 +1,5 @@
 {
-	"name": "@repo/shared-storage",
+	"name": "@repo/shared-jwt",
 	"exports": {
 		".": "./src/index.ts"
 	},
@@ -8,9 +8,8 @@
 		"build": "tsc"
 	},
 	"dependencies": {
-		"@aws-sdk/client-s3": "^3.911.0",
-		"@aws-sdk/s3-request-presigner": "^3.911.0",
 		"@repo/config-static": "workspace:*",
-		"@repo/config-ts": "workspace:*"
+		"@repo/config-ts": "workspace:*",
+		"jose": "^6.1.0"
 	}
 }

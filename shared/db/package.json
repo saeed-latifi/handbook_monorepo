@@ -2,7 +2,8 @@
 	"name": "@repo/shared-db",
 	"exports": {
 		".": "./src/index.ts",
-		"./users": "./src/types/users.ts"
+		"./types": "./src/types/index.ts",
+		"./models": "./src/models/index.ts"
 	},
 	"type": "module",
 	"scripts": {
@@ -11,8 +12,9 @@
 		"migrate": "drizzle-kit migrate"
 	},
 	"dependencies": {
-		"@repo/config-ts": "workspace:*",
 		"@repo/config-static": "workspace:*",
+		"@repo/config-ts": "workspace:*",
+		"@types/pg": "^8.15.5",
 		"drizzle-orm": "^0.44.2",
 		"pg": "^8.16.0"
 	},

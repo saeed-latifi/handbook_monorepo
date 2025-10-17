@@ -1,42 +1,41 @@
 import { serve } from "@hono/node-server";
-import type { INewUser } from "@repo/shared-db/users";
-import { getContentList, onStorageInit } from "@repo/shared-storage";
+import http from "node:http";
 import { Hono } from "hono";
+import { middlewareUser, type IMiddlewareUser } from "./middlewares/middlewareUser";
 import { cors } from "hono/cors";
+import { accountRoute } from "./routes/account.route";
+import { seedRootUser } from "./db/seed";
+import { userRoute } from "./routes/user/user.route";
+import { middlewareSession } from "./middlewares/middlewareSession";
+import { publicRoutes } from "./routes/public.route";
+import { StorageRoute } from "./routes/storage/storage.route";
+import { origins, portRest } from "@repo/config-static";
 
-const app = new Hono();
-onStorageInit("red");
-test();
+async function main() {
+	const root = await seedRootUser();
+	if (!root) throw new Error("no root user!");
 
-app.use(
-	"/*",
-	cors({
-		origin: "*", // Allow all origins (for development)
-		// For production, specify allowed origins:
-		// origin: ['https://yourdomain.com', 'http://localhost:3000'],
-		allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-		allowHeaders: ["Content-Type"],
-		maxAge: 86400,
-	}),
-);
+	const app = new Hono<IMiddlewareUser>().basePath("/api");
+	app.use(
+		"/*",
+		cors({
+			origin: origins,
+			credentials: true,
+		}),
+	);
 
-app.get("/", async (c) => {
-	await test();
-	return c.json(newUser());
-});
+	app.route("/public", publicRoutes());
 
-serve({ fetch: app.fetch, port: 3010 }, (info) => {
-	console.log(`Server is running on http://localhost:${info.port}`);
-});
+	app.use(middlewareSession);
+	app.route("/account", accountRoute);
 
-function newUser() {
-	const newUser: INewUser = { age: 32, email: "qweqwe", name: "234rwefsd" };
-	console.log(newUser);
-	return newUser;
+	app.use(middlewareUser);
+	app.route("/user", userRoute);
+	app.route("/storage", StorageRoute);
+
+	serve({ fetch: app.fetch, port: portRest }, (info) => {
+		console.log(`Server is running on http://localhost:${info.port}`);
+	});
 }
 
-async function test() {
-	const data = await getContentList({ bucketName: "red" });
-	// const w = await createSubFolder({ bucketName: "red", folders: ["ee", "ff"], parents: ["a", "b", "c"] });
-	console.log({ data });
-}
+main();

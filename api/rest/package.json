@@ -8,7 +8,10 @@
 	},
 	"dependencies": {
 		"@hono/node-server": "^1.14.4",
+		"@repo/config-static": "workspace:*",
 		"@repo/shared-db": "workspace:*",
+		"@repo/shared-jwt": "workspace:*",
+		"@repo/shared-logger": "workspace:*",
 		"@repo/shared-storage": "workspace:*",
 		"hono": "^4.7.11"
 	},

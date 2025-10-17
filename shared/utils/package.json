@@ -9,9 +9,5 @@
 	},
 	"dependencies": {
 		"@repo/config-ts": "workspace:*"
-	},
-	"devDependencies": {
-		"@types/node": "^20.19.0",
-		"drizzle-kit": "^0.31.1"
 	}
 }
