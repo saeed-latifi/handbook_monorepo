@@ -8,12 +8,12 @@
 		"build": "tsc"
 	},
 	"dependencies": {
+		"@aws-sdk/client-s3": "^3.911.0",
+		"@aws-sdk/s3-request-presigner": "^3.911.0",
 		"@repo/config-static": "workspace:*",
-		"@repo/config-ts": "workspace:*",
-		"minio": "^8.0.5"
+		"@repo/config-ts": "workspace:*"
 	},
 	"devDependencies": {
-		"@types/node": "^20.19.0",
-		"drizzle-kit": "^0.31.1"
+		"@types/node": "^20.19.0"
 	}
 }
