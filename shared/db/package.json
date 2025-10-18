@@ -13,13 +13,14 @@
 	},
 	"dependencies": {
 		"@repo/config-static": "workspace:*",
-		"@repo/config-ts": "workspace:*",
-		"@types/pg": "^8.15.5",
 		"drizzle-orm": "^0.44.2",
+		"drizzle-seed": "^0.3.1",
 		"pg": "^8.16.0"
 	},
 	"devDependencies": {
-		"@types/node": "^20.19.0",
+		"@repo/config-ts": "workspace:*",
+		"@types/pg": "^8.15.5",
+		"@types/node": "^24.8.1",
 		"drizzle-kit": "^0.31.1"
 	}
 }

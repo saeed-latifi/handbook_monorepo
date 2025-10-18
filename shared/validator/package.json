@@ -1,5 +1,5 @@
 {
-	"name": "@repo/shared-jwt",
+	"name": "@repo/shared-validator",
 	"exports": {
 		".": "./src/index.ts"
 	},
@@ -9,7 +9,8 @@
 	},
 	"dependencies": {
 		"@repo/config-static": "workspace:*",
-		"jose": "^6.1.0"
+		"@repo/shared-utils": "workspace:*",
+		"typebox": "^1.0.37"
 	},
 	"devDependencies": {
 		"@types/node": "^24.8.1",

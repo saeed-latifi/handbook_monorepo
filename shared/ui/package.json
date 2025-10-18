@@ -12,10 +12,10 @@
 	"devDependencies": {
 		"@repo/config-ts": "workspace:*",
 		"@repo/config-eslint": "workspace:*",
-		"@repo/config-tailwind": "workspace:*"
+		"@repo/config-tailwind": "workspace:*",
+		"eslint": "^9.21.0"
 	},
 	"dependencies": {
-		"eslint": "^9.21.0",
 		"solid-js": "^1.9.5",
 		"tailwindcss": "^4.0.9",
 		"clsx": "^2.1.1",

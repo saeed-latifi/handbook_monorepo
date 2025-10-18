@@ -38,9 +38,21 @@ importers:
       '@repo/shared-logger':
         specifier: workspace:*
         version: link:../../shared/logger
+      '@repo/shared-mail':
+        specifier: workspace:*
+        version: link:../../shared/mail
       '@repo/shared-storage':
         specifier: workspace:*
         version: link:../../shared/storage
+      '@repo/shared-utils':
+        specifier: workspace:*
+        version: link:../../shared/utils
+      '@repo/shared-validator':
+        specifier: workspace:*
+        version: link:../../shared/validator
+      bcryptjs:
+        specifier: ^3.0.2
+        version: 3.0.2
       hono:
         specifier: ^4.7.11
         version: 4.7.11
@@ -49,8 +61,8 @@ importers:
         specifier: workspace:*
         version: link:../../config/tsconfig
       '@types/node':
-        specifier: ^20.11.17
-        version: 20.19.1
+        specifier: ^24.8.1
+        version: 24.8.1
       tsx:
         specifier: ^4.7.1
         version: 4.20.3
@@ -68,8 +80,8 @@ importers:
         specifier: workspace:*
         version: link:../../config/tsconfig
       '@types/node':
-        specifier: ^20.11.17
-        version: 20.19.1
+        specifier: ^24.8.1
+        version: 24.8.1
       tsx:
         specifier: ^4.7.1
         version: 4.20.3
@@ -90,10 +102,10 @@ importers:
         version: 0.15.3(solid-js@1.9.7)
       '@solidjs/start':
         specifier: ^1.1.0
-        version: 1.1.4(solid-js@1.9.7)(vinxi@0.5.7(@types/node@24.1.0)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2))(vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))
+        version: 1.1.4(solid-js@1.9.7)(vinxi@0.5.7(@types/node@24.8.1)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2))(vite@6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))
       '@tailwindcss/vite':
         specifier: ^4.0.9
-        version: 4.1.10(vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))
+        version: 4.1.10(vite@6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))
       solid-js:
         specifier: ^1.9.5
         version: 1.9.7
@@ -102,7 +114,7 @@ importers:
         version: 4.1.10
       vinxi:
         specifier: ^0.5.3
-        version: 0.5.7(@types/node@24.1.0)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2)
+        version: 0.5.7(@types/node@24.8.1)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2)
     devDependencies:
       '@repo/config-eslint':
         specifier: workspace:*
@@ -127,10 +139,10 @@ importers:
         version: 0.15.3(solid-js@1.9.7)
       '@solidjs/start':
         specifier: ^1.1.0
-        version: 1.1.4(solid-js@1.9.7)(vinxi@0.5.7(@types/node@24.1.0)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2))(vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))
+        version: 1.1.4(solid-js@1.9.7)(vinxi@0.5.7(@types/node@24.8.1)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2))(vite@6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))
       '@tailwindcss/vite':
         specifier: ^4.0.9
-        version: 4.1.10(vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))
+        version: 4.1.10(vite@6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))
       socket.io-client:
         specifier: ^4.7.5
         version: 4.8.1
@@ -142,7 +154,7 @@ importers:
         version: 4.1.10
       vinxi:
         specifier: ^0.5.3
-        version: 0.5.7(@types/node@24.1.0)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2)
+        version: 0.5.7(@types/node@24.8.1)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2)
     devDependencies:
       '@repo/config-eslint':
         specifier: workspace:*
@@ -194,8 +206,8 @@ importers:
         specifier: workspace:*
         version: link:../tsconfig
       '@types/node':
-        specifier: ^22.1.0
-        version: 22.17.0
+        specifier: ^24.8.1
+        version: 24.8.1
 
   config/tailwind:
     devDependencies:
@@ -216,22 +228,25 @@ importers:
       '@repo/config-static':
         specifier: workspace:*
         version: link:../../config/static
-      '@repo/config-ts':
-        specifier: workspace:*
-        version: link:../../config/tsconfig
-      '@types/pg':
-        specifier: ^8.15.5
-        version: 8.15.5
       drizzle-orm:
         specifier: ^0.44.2
         version: 0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)
+      drizzle-seed:
+        specifier: ^0.3.1
+        version: 0.3.1(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))
       pg:
         specifier: ^8.16.0
         version: 8.16.0
     devDependencies:
+      '@repo/config-ts':
+        specifier: workspace:*
+        version: link:../../config/tsconfig
       '@types/node':
-        specifier: ^20.19.0
-        version: 20.19.1
+        specifier: ^24.8.1
+        version: 24.8.1
+      '@types/pg':
+        specifier: ^8.15.5
+        version: 8.15.5
       drizzle-kit:
         specifier: ^0.31.1
         version: 0.31.1
@@ -241,18 +256,44 @@ importers:
       '@repo/config-static':
         specifier: workspace:*
         version: link:../../config/static
-      '@repo/config-ts':
-        specifier: workspace:*
-        version: link:../../config/tsconfig
       jose:
         specifier: ^6.1.0
         version: 6.1.0
-
-  shared/logger:
-    dependencies:
+    devDependencies:
       '@repo/config-ts':
         specifier: workspace:*
         version: link:../../config/tsconfig
+      '@types/node':
+        specifier: ^24.8.1
+        version: 24.8.1
+
+  shared/logger:
+    devDependencies:
+      '@repo/config-ts':
+        specifier: workspace:*
+        version: link:../../config/tsconfig
+      '@types/node':
+        specifier: ^24.8.1
+        version: 24.8.1
+
+  shared/mail:
+    dependencies:
+      '@repo/config-static':
+        specifier: workspace:*
+        version: link:../../config/static
+      '@types/node':
+        specifier: ^24.8.1
+        version: 24.8.1
+      nodemailer:
+        specifier: ^7.0.9
+        version: 7.0.9
+    devDependencies:
+      '@repo/config-ts':
+        specifier: workspace:*
+        version: link:../../config/tsconfig
+      '@types/nodemailer':
+        specifier: ^7.0.2
+        version: 7.0.2
 
   shared/storage:
     dependencies:
@@ -265,18 +306,19 @@ importers:
       '@repo/config-static':
         specifier: workspace:*
         version: link:../../config/static
+    devDependencies:
       '@repo/config-ts':
         specifier: workspace:*
         version: link:../../config/tsconfig
+      '@types/node':
+        specifier: ^24.8.1
+        version: 24.8.1
 
   shared/ui:
     dependencies:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      eslint:
-        specifier: ^9.21.0
-        version: 9.29.0(jiti@2.4.2)
       solid-js:
         specifier: ^1.9.5
         version: 1.9.7
@@ -296,12 +338,37 @@ importers:
       '@repo/config-ts':
         specifier: workspace:*
         version: link:../../config/tsconfig
+      eslint:
+        specifier: ^9.21.0
+        version: 9.29.0(jiti@2.4.2)
 
   shared/utils:
-    dependencies:
+    devDependencies:
       '@repo/config-ts':
         specifier: workspace:*
         version: link:../../config/tsconfig
+      '@types/node':
+        specifier: ^24.8.1
+        version: 24.8.1
+
+  shared/validator:
+    dependencies:
+      '@repo/config-static':
+        specifier: workspace:*
+        version: link:../../config/static
+      '@repo/shared-utils':
+        specifier: workspace:*
+        version: link:../utils
+      typebox:
+        specifier: ^1.0.37
+        version: 1.0.37
+    devDependencies:
+      '@repo/config-ts':
+        specifier: workspace:*
+        version: link:../../config/tsconfig
+      '@types/node':
+        specifier: ^24.8.1
+        version: 24.8.1
 
 packages:
 
@@ -336,6 +403,10 @@ packages:
     resolution: {integrity: sha512-/quXtfLytvLv9JCbTC+qAxVpk+f6X4UNX2g4UMrOHXHKBbAu6F+O1Do3vdw2lGj2grFQCC256lY09tuOoJJ3/w==}
     engines: {node: '>=18.0.0'}
 
+  '@aws-sdk/client-sesv2@3.913.0':
+    resolution: {integrity: sha512-xurdihi/HH3em6XgvI+AlolCjqu74CxyOAEEWAJBk1Xp+yqNUaYR5d1m26iI7UuTy8gAZ+48UNvQBVhUXe5ZwA==}
+    engines: {node: '>=18.0.0'}
+
   '@aws-sdk/client-sso@3.911.0':
     resolution: {integrity: sha512-N9QAeMvN3D1ZyKXkQp4aUgC4wUMuA5E1HuVCkajc0bq1pnH4PIke36YlrDGGREqPlyLFrXCkws2gbL5p23vtlg==}
     engines: {node: '>=18.0.0'}
@@ -356,8 +427,16 @@ packages:
     resolution: {integrity: sha512-bQ86kWAZ0Imn7uWl7uqOYZ2aqlkftPmEc8cQh+QyhmUXbia8II4oYKq/tMek6j3M5UOMCiJVxzJoxemJZA6/sw==}
     engines: {node: '>=18.0.0'}
 
+  '@aws-sdk/credential-provider-ini@3.913.0':
+    resolution: {integrity: sha512-iR4c4NQ1OSRKQi0SxzpwD+wP1fCy+QNKtEyCajuVlD0pvmoIHdrm5THK9e+2/7/SsQDRhOXHJfLGxHapD74WJw==}
+    engines: {node: '>=18.0.0'}
+
   '@aws-sdk/credential-provider-node@3.911.0':
     resolution: {integrity: sha512-4oGpLwgQCKNtVoJROztJ4v7lZLhCqcUMX6pe/DQ2aU0TktZX7EczMCIEGjVo5b7yHwSNWt2zW0tDdgVUTsMHPw==}
+    engines: {node: '>=18.0.0'}
+
+  '@aws-sdk/credential-provider-node@3.913.0':
+    resolution: {integrity: sha512-HQPLkKDxS83Q/nZKqg9bq4igWzYQeOMqhpx5LYs4u1GwsKeCsYrrfz12Iu4IHNWPp9EnGLcmdfbfYuqZGrsaSQ==}
     engines: {node: '>=18.0.0'}
 
   '@aws-sdk/credential-provider-process@3.911.0':
@@ -1766,14 +1845,11 @@ packages:
   '@types/micromatch@4.0.9':
     resolution: {integrity: sha512-7V+8ncr22h4UoYRLnLXSpTxjQrNUXtWHGeMPRJt1nULXI57G9bIcpyrHlmrQ7QK24EyyuXvYcSSWAM8GA9nqCg==}
 
-  '@types/node@20.19.1':
-    resolution: {integrity: sha512-jJD50LtlD2dodAEO653i3YF04NWak6jN3ky+Ri3Em3mGR39/glWiboM/IePaRbgwSfqM1TpGXfAg8ohn/4dTgA==}
+  '@types/node@24.8.1':
+    resolution: {integrity: sha512-alv65KGRadQVfVcG69MuB4IzdYVpRwMG/mq8KWOaoOdyY617P5ivaDiMCGOFDWD2sAn5Q0mR3mRtUOgm99hL9Q==}
 
-  '@types/node@22.17.0':
-    resolution: {integrity: sha512-bbAKTCqX5aNVryi7qXVMi+OkB3w/OyblodicMbvE38blyAz7GxXf6XYhklokijuPwwVg9sDLKRxt0ZHXQwZVfQ==}
-
-  '@types/node@24.1.0':
-    resolution: {integrity: sha512-ut5FthK5moxFKH2T1CUOC6ctR67rQRvvHdFLCD2Ql6KXmMuCrjsSsRI9UsLCm9M18BMwClv4pn327UvB7eeO1w==}
+  '@types/nodemailer@7.0.2':
+    resolution: {integrity: sha512-Zo6uOA9157WRgBk/ZhMpTQ/iCWLMk7OIs/Q9jvHarMvrzUUP/MDdPHL2U1zpf57HrrWGv4nYQn5uIxna0xY3xw==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -2036,6 +2112,10 @@ packages:
   base64id@2.0.0:
     resolution: {integrity: sha512-lGe34o6EHj9y3Kts9R4ZYs/Gr+6N7MCaMlIFA3F1R2O5/m7K06AxfSeO5530PEERE6/WyEg3lsuyw4GHlPZHog==}
     engines: {node: ^4.5.0 || >= 5.9}
+
+  bcryptjs@3.0.2:
+    resolution: {integrity: sha512-k38b3XOZKv60C4E2hVsXTolJWfkGRMbILBIe2IBITXciy5bOsTKot5kDrf3ZfufQtQOUN5mXceUEpU1rTl9Uog==}
+    hasBin: true
 
   bindings@1.5.0:
     resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
@@ -2543,6 +2623,14 @@ packages:
       sql.js:
         optional: true
       sqlite3:
+        optional: true
+
+  drizzle-seed@0.3.1:
+    resolution: {integrity: sha512-F/0lgvfOAsqlYoHM/QAGut4xXIOXoE5VoAdv2FIl7DpGYVXlAzKuJO+IphkKUFK3Dz+rFlOsQLnMNrvoQ0cx7g==}
+    peerDependencies:
+      drizzle-orm: '>=0.36.4'
+    peerDependenciesMeta:
+      drizzle-orm:
         optional: true
 
   dunder-proto@1.0.1:
@@ -3586,6 +3674,10 @@ packages:
     resolution: {integrity: sha512-3VW/8JpPqPvnJvseXowjZcirPisssnBuDikk6JIZ8jQzF7KJQX52iPFX4RYYxLycYH7IbMRSPUOga/esVjy5Yg==}
     engines: {node: '>=18'}
 
+  nodemailer@7.0.9:
+    resolution: {integrity: sha512-9/Qm0qXIByEP8lEV2qOqcAW7bRpL8CR9jcTwk3NBnHJNmP9fIJ86g2fgmIXqHY+nj55ZEMwWqYAT2QTDpRUYiQ==}
+    engines: {node: '>=6.0.0'}
+
   nopt@8.1.0:
     resolution: {integrity: sha512-ieGu42u/Qsa4TFktmaKEwM6MQH0pOWnaB3htzh0JRtx84+Mebc0cbZYN5bC+6WTZ4+77xrL9Pn5m7CV6VIkV7A==}
     engines: {node: ^18.17.0 || >=20.5.0}
@@ -3862,6 +3954,9 @@ packages:
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
+
+  pure-rand@6.1.0:
+    resolution: {integrity: sha512-bVWawvoZoBYpp6yIoQtQXHZjmz35RSVHnUOTefl8Vcjr8snTPY1wnpSPMWekcFwbxI6gtmT7rSYPFvz71ldiOA==}
 
   qs@6.14.0:
     resolution: {integrity: sha512-YWWTjgABSKcvs/nWBi9PycY/JiPJqOD4JA6o9Sej2AtvSGarXxKC3OQSk4pAarbdQlKAh5D4FCQkJNkW+GAn3w==}
@@ -4371,6 +4466,9 @@ packages:
     resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
     engines: {node: '>=16'}
 
+  typebox@1.0.37:
+    resolution: {integrity: sha512-xdaEemcO+OzUQZm4DVC1+nViXEiFJqEVANfnER31xajkd15b5M9lmpt/A3otLtWx8OHfM7LYX3q2jQS9IIwFYQ==}
+
   typescript-eslint@8.34.1:
     resolution: {integrity: sha512-XjS+b6Vg9oT1BaIUfkW3M3LvqZE++rbzAMEHuccCfO/YkP43ha6w3jTEMilQxMF92nVOYCcdjv1ZUhAa1D/0ow==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -4403,11 +4501,8 @@ packages:
   undici-types@5.28.4:
     resolution: {integrity: sha512-3OeMF5Lyowe8VW0skf5qaIE7Or3yS9LS7fvMUI0gg4YxpIBVg0L8BxCmROw2CcYhSkpR68Epz7CGc8MPj94Uww==}
 
-  undici-types@6.21.0:
-    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
-
-  undici-types@7.8.0:
-    resolution: {integrity: sha512-9UJ2xGDvQ43tYyVMpuHlsgApydB8ZKfVYTsLDhXkFL/6gfkp+U8xTGdh8pMJv1SpZna0zxG1DwsKZsreLbXBxw==}
+  undici-types@7.14.0:
+    resolution: {integrity: sha512-QQiYxHuyZ9gQUIrmPo3IA+hUl4KYk8uSA7cHrcKd/l3p1OTpZcM0Tbp9x7FAtXdAYhlasd60ncPpgu6ihG6TOA==}
 
   unenv@1.10.0:
     resolution: {integrity: sha512-wY5bskBQFL9n3Eca5XnhH6KbUo/tfvkwm9OpcdCvLaeA7piBNbavbOKJySEwQ1V0RH6HvNlSAFRTpvTqgKRQXQ==}
@@ -4881,6 +4976,51 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
+  '@aws-sdk/client-sesv2@3.913.0':
+    dependencies:
+      '@aws-crypto/sha256-browser': 5.2.0
+      '@aws-crypto/sha256-js': 5.2.0
+      '@aws-sdk/core': 3.911.0
+      '@aws-sdk/credential-provider-node': 3.913.0
+      '@aws-sdk/middleware-host-header': 3.910.0
+      '@aws-sdk/middleware-logger': 3.910.0
+      '@aws-sdk/middleware-recursion-detection': 3.910.0
+      '@aws-sdk/middleware-user-agent': 3.911.0
+      '@aws-sdk/region-config-resolver': 3.910.0
+      '@aws-sdk/signature-v4-multi-region': 3.911.0
+      '@aws-sdk/types': 3.910.0
+      '@aws-sdk/util-endpoints': 3.910.0
+      '@aws-sdk/util-user-agent-browser': 3.910.0
+      '@aws-sdk/util-user-agent-node': 3.911.0
+      '@smithy/config-resolver': 4.3.3
+      '@smithy/core': 3.17.0
+      '@smithy/fetch-http-handler': 5.3.4
+      '@smithy/hash-node': 4.2.3
+      '@smithy/invalid-dependency': 4.2.3
+      '@smithy/middleware-content-length': 4.2.3
+      '@smithy/middleware-endpoint': 4.3.4
+      '@smithy/middleware-retry': 4.4.4
+      '@smithy/middleware-serde': 4.2.3
+      '@smithy/middleware-stack': 4.2.3
+      '@smithy/node-config-provider': 4.3.3
+      '@smithy/node-http-handler': 4.4.2
+      '@smithy/protocol-http': 5.3.3
+      '@smithy/smithy-client': 4.9.0
+      '@smithy/types': 4.8.0
+      '@smithy/url-parser': 4.2.3
+      '@smithy/util-base64': 4.3.0
+      '@smithy/util-body-length-browser': 4.2.0
+      '@smithy/util-body-length-node': 4.2.1
+      '@smithy/util-defaults-mode-browser': 4.3.3
+      '@smithy/util-defaults-mode-node': 4.2.4
+      '@smithy/util-endpoints': 3.2.3
+      '@smithy/util-middleware': 4.2.3
+      '@smithy/util-retry': 4.2.3
+      '@smithy/util-utf8': 4.2.0
+      tslib: 2.8.1
+    transitivePeerDependencies:
+      - aws-crt
+
   '@aws-sdk/client-sso@3.911.0':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
@@ -4979,11 +5119,46 @@ snapshots:
     transitivePeerDependencies:
       - aws-crt
 
+  '@aws-sdk/credential-provider-ini@3.913.0':
+    dependencies:
+      '@aws-sdk/core': 3.911.0
+      '@aws-sdk/credential-provider-env': 3.911.0
+      '@aws-sdk/credential-provider-http': 3.911.0
+      '@aws-sdk/credential-provider-process': 3.911.0
+      '@aws-sdk/credential-provider-sso': 3.911.0
+      '@aws-sdk/credential-provider-web-identity': 3.911.0
+      '@aws-sdk/nested-clients': 3.911.0
+      '@aws-sdk/types': 3.910.0
+      '@smithy/credential-provider-imds': 4.2.3
+      '@smithy/property-provider': 4.2.3
+      '@smithy/shared-ini-file-loader': 4.3.3
+      '@smithy/types': 4.8.0
+      tslib: 2.8.1
+    transitivePeerDependencies:
+      - aws-crt
+
   '@aws-sdk/credential-provider-node@3.911.0':
     dependencies:
       '@aws-sdk/credential-provider-env': 3.911.0
       '@aws-sdk/credential-provider-http': 3.911.0
       '@aws-sdk/credential-provider-ini': 3.911.0
+      '@aws-sdk/credential-provider-process': 3.911.0
+      '@aws-sdk/credential-provider-sso': 3.911.0
+      '@aws-sdk/credential-provider-web-identity': 3.911.0
+      '@aws-sdk/types': 3.910.0
+      '@smithy/credential-provider-imds': 4.2.3
+      '@smithy/property-provider': 4.2.3
+      '@smithy/shared-ini-file-loader': 4.3.3
+      '@smithy/types': 4.8.0
+      tslib: 2.8.1
+    transitivePeerDependencies:
+      - aws-crt
+
+  '@aws-sdk/credential-provider-node@3.913.0':
+    dependencies:
+      '@aws-sdk/credential-provider-env': 3.911.0
+      '@aws-sdk/credential-provider-http': 3.911.0
+      '@aws-sdk/credential-provider-ini': 3.913.0
       '@aws-sdk/credential-provider-process': 3.911.0
       '@aws-sdk/credential-provider-sso': 3.911.0
       '@aws-sdk/credential-provider-web-identity': 3.911.0
@@ -6442,11 +6617,11 @@ snapshots:
     dependencies:
       solid-js: 1.9.7
 
-  '@solidjs/start@1.1.4(solid-js@1.9.7)(vinxi@0.5.7(@types/node@24.1.0)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2))(vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))':
+  '@solidjs/start@1.1.4(solid-js@1.9.7)(vinxi@0.5.7(@types/node@24.8.1)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2))(vite@6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))':
     dependencies:
-      '@tanstack/server-functions-plugin': 1.121.21(vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))
-      '@vinxi/plugin-directives': 0.5.1(vinxi@0.5.7(@types/node@24.1.0)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2))
-      '@vinxi/server-components': 0.5.1(vinxi@0.5.7(@types/node@24.1.0)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2))
+      '@tanstack/server-functions-plugin': 1.121.21(vite@6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))
+      '@vinxi/plugin-directives': 0.5.1(vinxi@0.5.7(@types/node@24.8.1)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2))
+      '@vinxi/server-components': 0.5.1(vinxi@0.5.7(@types/node@24.8.1)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2))
       defu: 6.1.4
       error-stack-parser: 2.1.4
       html-to-image: 1.11.13
@@ -6457,8 +6632,8 @@ snapshots:
       source-map-js: 1.2.1
       terracotta: 1.0.6(solid-js@1.9.7)
       tinyglobby: 0.2.14
-      vinxi: 0.5.7(@types/node@24.1.0)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2)
-      vite-plugin-solid: 2.11.6(solid-js@1.9.7)(vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))
+      vinxi: 0.5.7(@types/node@24.8.1)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2)
+      vite-plugin-solid: 2.11.6(solid-js@1.9.7)(vite@6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))
     transitivePeerDependencies:
       - '@testing-library/jest-dom'
       - solid-js
@@ -6531,14 +6706,14 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.1.10
       '@tailwindcss/oxide-win32-x64-msvc': 4.1.10
 
-  '@tailwindcss/vite@4.1.10(vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))':
+  '@tailwindcss/vite@4.1.10(vite@6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))':
     dependencies:
       '@tailwindcss/node': 4.1.10
       '@tailwindcss/oxide': 4.1.10
       tailwindcss: 4.1.10
-      vite: 6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)
+      vite: 6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)
 
-  '@tanstack/directive-functions-plugin@1.121.21(vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))':
+  '@tanstack/directive-functions-plugin@1.121.21(vite@6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))':
     dependencies:
       '@babel/code-frame': 7.26.2
       '@babel/core': 7.27.4
@@ -6547,7 +6722,7 @@ snapshots:
       '@tanstack/router-utils': 1.121.21
       babel-dead-code-elimination: 1.0.10
       tiny-invariant: 1.3.3
-      vite: 6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)
+      vite: 6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -6562,7 +6737,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tanstack/server-functions-plugin@1.121.21(vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))':
+  '@tanstack/server-functions-plugin@1.121.21(vite@6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))':
     dependencies:
       '@babel/code-frame': 7.26.2
       '@babel/core': 7.27.4
@@ -6571,7 +6746,7 @@ snapshots:
       '@babel/template': 7.27.2
       '@babel/traverse': 7.27.4
       '@babel/types': 7.27.6
-      '@tanstack/directive-functions-plugin': 1.121.21(vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))
+      '@tanstack/directive-functions-plugin': 1.121.21(vite@6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))
       babel-dead-code-elimination: 1.0.10
       tiny-invariant: 1.3.3
     transitivePeerDependencies:
@@ -6603,7 +6778,7 @@ snapshots:
 
   '@types/cors@2.8.19':
     dependencies:
-      '@types/node': 20.19.1
+      '@types/node': 24.8.1
 
   '@types/estree@1.0.7': {}
 
@@ -6623,24 +6798,22 @@ snapshots:
     dependencies:
       '@types/braces': 3.0.5
 
-  '@types/node@20.19.1':
+  '@types/node@24.8.1':
     dependencies:
-      undici-types: 6.21.0
+      undici-types: 7.14.0
 
-  '@types/node@22.17.0':
+  '@types/nodemailer@7.0.2':
     dependencies:
-      undici-types: 6.21.0
-
-  '@types/node@24.1.0':
-    dependencies:
-      undici-types: 7.8.0
-    optional: true
+      '@aws-sdk/client-sesv2': 3.913.0
+      '@types/node': 24.8.1
+    transitivePeerDependencies:
+      - aws-crt
 
   '@types/normalize-package-data@2.4.4': {}
 
   '@types/pg@8.15.5':
     dependencies:
-      '@types/node': 20.19.1
+      '@types/node': 24.8.1
       pg-protocol: 1.10.0
       pg-types: 2.2.0
 
@@ -6652,7 +6825,7 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 20.19.1
+      '@types/node': 24.8.1
     optional: true
 
   '@typescript-eslint/eslint-plugin@8.34.1(@typescript-eslint/parser@8.34.1(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3)':
@@ -6788,7 +6961,7 @@ snapshots:
       untun: 0.1.3
       uqr: 0.1.2
 
-  '@vinxi/plugin-directives@0.5.1(vinxi@0.5.7(@types/node@24.1.0)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2))':
+  '@vinxi/plugin-directives@0.5.1(vinxi@0.5.7(@types/node@24.8.1)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2))':
     dependencies:
       '@babel/parser': 7.27.5
       acorn: 8.15.0
@@ -6799,18 +6972,18 @@ snapshots:
       magicast: 0.2.11
       recast: 0.23.11
       tslib: 2.8.1
-      vinxi: 0.5.7(@types/node@24.1.0)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2)
+      vinxi: 0.5.7(@types/node@24.8.1)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2)
 
-  '@vinxi/server-components@0.5.1(vinxi@0.5.7(@types/node@24.1.0)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2))':
+  '@vinxi/server-components@0.5.1(vinxi@0.5.7(@types/node@24.8.1)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2))':
     dependencies:
-      '@vinxi/plugin-directives': 0.5.1(vinxi@0.5.7(@types/node@24.1.0)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2))
+      '@vinxi/plugin-directives': 0.5.1(vinxi@0.5.7(@types/node@24.8.1)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2))
       acorn: 8.15.0
       acorn-loose: 8.5.1
       acorn-typescript: 1.4.13(acorn@8.15.0)
       astring: 1.9.0
       magicast: 0.2.11
       recast: 0.23.11
-      vinxi: 0.5.7(@types/node@24.1.0)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2)
+      vinxi: 0.5.7(@types/node@24.8.1)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2)
 
   '@vue/compiler-core@3.5.16':
     dependencies:
@@ -6999,6 +7172,8 @@ snapshots:
   base64-js@1.5.1: {}
 
   base64id@2.0.0: {}
+
+  bcryptjs@3.0.2: {}
 
   bindings@1.5.0:
     dependencies:
@@ -7377,6 +7552,12 @@ snapshots:
       pg: 8.16.0
       postgres: 3.4.7
 
+  drizzle-seed@0.3.1(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)):
+    dependencies:
+      pure-rand: 6.1.0
+    optionalDependencies:
+      drizzle-orm: 0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)
+
   dunder-proto@1.0.1:
     dependencies:
       call-bind-apply-helpers: 1.0.2
@@ -7426,7 +7607,7 @@ snapshots:
   engine.io@6.6.4:
     dependencies:
       '@types/cors': 2.8.19
-      '@types/node': 20.19.1
+      '@types/node': 24.8.1
       accepts: 1.3.8
       base64id: 2.0.0
       cookie: 0.7.2
@@ -8508,6 +8689,8 @@ snapshots:
     dependencies:
       '@babel/parser': 7.27.5
 
+  nodemailer@7.0.9: {}
+
   nopt@8.1.0:
     dependencies:
       abbrev: 3.0.1
@@ -8777,6 +8960,8 @@ snapshots:
       once: 1.4.0
 
   punycode@2.3.1: {}
+
+  pure-rand@6.1.0: {}
 
   qs@6.14.0:
     dependencies:
@@ -9360,6 +9545,8 @@ snapshots:
 
   type-fest@4.41.0: {}
 
+  typebox@1.0.37: {}
+
   typescript-eslint@8.34.1(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3):
     dependencies:
       '@typescript-eslint/eslint-plugin': 8.34.1(@typescript-eslint/parser@8.34.1(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3)
@@ -9389,10 +9576,7 @@ snapshots:
 
   undici-types@5.28.4: {}
 
-  undici-types@6.21.0: {}
-
-  undici-types@7.8.0:
-    optional: true
+  undici-types@7.14.0: {}
 
   unenv@1.10.0:
     dependencies:
@@ -9550,7 +9734,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vinxi@0.5.7(@types/node@24.1.0)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2):
+  vinxi@0.5.7(@types/node@24.8.1)(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7))(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)(xml2js@0.6.2):
     dependencies:
       '@babel/core': 7.27.4
       '@babel/plugin-syntax-jsx': 7.27.1(@babel/core@7.27.4)
@@ -9584,7 +9768,7 @@ snapshots:
       unctx: 2.4.1
       unenv: 1.10.0
       unstorage: 1.16.0(db0@0.3.2(drizzle-orm@0.44.2(@types/pg@8.15.5)(pg@8.16.0)(postgres@3.4.7)))(ioredis@5.6.1)
-      vite: 6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)
+      vite: 6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)
       zod: 3.25.67
     transitivePeerDependencies:
       - '@azure/app-configuration'
@@ -9628,7 +9812,7 @@ snapshots:
       - xml2js
       - yaml
 
-  vite-plugin-solid@2.11.6(solid-js@1.9.7)(vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)):
+  vite-plugin-solid@2.11.6(solid-js@1.9.7)(vite@6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)):
     dependencies:
       '@babel/core': 7.27.4
       '@types/babel__core': 7.20.5
@@ -9636,12 +9820,12 @@ snapshots:
       merge-anything: 5.1.7
       solid-js: 1.9.7
       solid-refresh: 0.6.3(solid-js@1.9.7)
-      vite: 6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)
-      vitefu: 1.0.6(vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))
+      vite: 6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)
+      vitefu: 1.0.6(vite@6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3))
     transitivePeerDependencies:
       - supports-color
 
-  vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3):
+  vite@6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3):
     dependencies:
       esbuild: 0.25.5
       fdir: 6.4.6(picomatch@4.0.2)
@@ -9650,16 +9834,16 @@ snapshots:
       rollup: 4.43.0
       tinyglobby: 0.2.14
     optionalDependencies:
-      '@types/node': 24.1.0
+      '@types/node': 24.8.1
       fsevents: 2.3.3
       jiti: 2.4.2
       lightningcss: 1.30.1
       terser: 5.43.0
       tsx: 4.20.3
 
-  vitefu@1.0.6(vite@6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)):
+  vitefu@1.0.6(vite@6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)):
     optionalDependencies:
-      vite: 6.3.5(@types/node@24.1.0)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)
+      vite: 6.3.5(@types/node@24.8.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.0)(tsx@4.20.3)
 
   web-streams-polyfill@3.3.3: {}
 

@@ -1,4 +1,4 @@
-import { pgTable, timestamp, boolean, foreignKey, integer, varchar, serial } from "drizzle-orm/pg-core";
+import { pgTable, timestamp, boolean, foreignKey, integer, varchar } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
 import { usersTable } from "./schema.users";
 

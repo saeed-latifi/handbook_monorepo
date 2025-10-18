@@ -18,8 +18,25 @@ export const cookieKeyUser = process.env.COOKIE_KEY_USER ?? "";
 export const cookieAgeSession = 360 * 24 * 60 * 60;
 export const cookieAgeUser = 30 * 24 * 60 * 60;
 
+// origins
 export const origins = ["http://localhost:3000", "http://localhost:3001", "http://localhost:3002", "https://saeedlatifi.ir"];
 
+// ports
 export const portRest = 3010;
+export const portSocket = 3011;
 
+// validations
+export const userPasswordLength = 8;
+export const phoneNumberLength = 11;
+
+// types
 export * from "./response.type";
+export * from "./enum.types";
+
+// mail
+export const emailFrom = process.env.EMAIL_FROM;
+export const mailPort = parseInt(process.env.EMAIL_PORT ?? "");
+export const emailUser = process.env.EMAIL_USER;
+export const emailPassword = process.env.EMAIL_PASSWORD;
+export const emailHost = process.env.EMAIL_HOST;
+export const emailName = process.env.EMAIL_NAME;
