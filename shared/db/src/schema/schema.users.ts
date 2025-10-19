@@ -1,7 +1,7 @@
 import { relations } from "drizzle-orm";
 import { boolean, integer, pgTable, varchar, uuid, timestamp, foreignKey, pgEnum } from "drizzle-orm/pg-core";
 import { sessionsTable } from "./schema.session";
-import { UserRole } from "@repo/config-static";
+import { UserRole } from "../enums";
 
 export const userRoleEnum = pgEnum("user_role", [UserRole.Admin, UserRole.Base]);
 

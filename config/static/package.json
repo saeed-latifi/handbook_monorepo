@@ -10,7 +10,6 @@
 		"build": "tsc"
 	},
 	"packageManager": "pnpm@10.12.1",
-	"dependencies": {},
 	"devDependencies": {
 		"@types/node": "^24.8.1",
 		"@repo/config-ts": "workspace:*"

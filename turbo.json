@@ -1,7 +1,7 @@
 {
 	"$schema": "https://turborepo.com/schema.json",
 	"ui": "tui",
-	"globalEnv": ["DATABASE_URL", "STORAGE_END_POINT", "STORAGE_PORT", "STORAGE_ACCESS_KEY", "STORAGE_SECRET_KEY"],
+	"globalEnv": ["DATABASE_URL", "STORAGE_END_POINT", "STORAGE_PORT", "STORAGE_ACCESS_KEY", "STORAGE_SECRET_KEY", "TOKEN_USER", "TOKEN_SESSION", "COOKIE_KEY_USER", "COOKIE_KEY_SESSION"],
 	"tasks": {
 		"build": {
 			"dependsOn": ["^build"],

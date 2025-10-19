@@ -1,12 +1,13 @@
 import { Hono } from "hono";
 import { deleteCookie } from "hono/cookie";
 import bcrypt from "bcryptjs";
-import { cookieKeyUser, onResponseNoAccount, onResponseOk, onResponseServerError, onResponseValidations } from "@repo/config-static";
+import { cookieKeyUser } from "@repo/config-static";
 import { passwordGenerator } from "@repo/shared-utils";
 import { modelUserChangePasswordByMail, modelUserGetAuthInfoByMail, modelUserGetById } from "@repo/shared-db";
 import { loginValidator, validator } from "@repo/shared-validator";
 import { onCreateCookieUser, onValidateCookieUser } from "../../cookie/cookieUser";
 import { sendForgetPasswordMail } from "@repo/shared-mail";
+import { onResponseNoAccount, onResponseOk, onResponseServerError, onResponseValidations } from "@repo/shared-types/helpers";
 
 export const accountRoutes = new Hono();
 
@@ -38,10 +39,8 @@ accountRoutes.post("/login", async (ctx) => {
 accountRoutes.get("/check", async (ctx) => {
 	try {
 		const user = await onValidateCookieUser({ ctx });
-		if (!user) {
-			deleteCookie(ctx, cookieKeyUser);
-			return ctx.json(onResponseNoAccount({}));
-		}
+		if (!user) return ctx.json(onResponseNoAccount({}));
+
 		return ctx.json(onResponseOk({ data: user }));
 	} catch (error) {
 		return ctx.json(onResponseServerError({ error }));

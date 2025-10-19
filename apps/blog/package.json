@@ -7,18 +7,21 @@
 		"start": "vinxi start --port 3000"
 	},
 	"dependencies": {
+		"@repo/shared-types": "workspace:*",
 		"@repo/shared-ui": "workspace:*",
 		"@solidjs/meta": "^0.29.4",
 		"@solidjs/router": "^0.15.0",
 		"@solidjs/start": "^1.1.0",
+		"@tailwindcss/vite": "^4.0.9",
+		"axios": "^1.12.2",
+		"solid-barn": "^0.1.5",
 		"solid-js": "^1.9.5",
-		"vinxi": "^0.5.3",
 		"tailwindcss": "^4.0.9",
-		"@tailwindcss/vite": "^4.0.9"
+		"vinxi": "^0.5.3"
 	},
 	"devDependencies": {
-		"@repo/config-ts": "workspace:*",
 		"@repo/config-eslint": "workspace:*",
-		"@repo/config-tailwind": "workspace:*"
+		"@repo/config-tailwind": "workspace:*",
+		"@repo/config-ts": "workspace:*"
 	}
 }

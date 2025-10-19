@@ -1,8 +1,8 @@
 import { Title } from "@solidjs/meta";
-import { Button } from "@repo/shared-ui/button";
 
 import { createResource, createSignal, onMount } from "solid-js";
 import { io, Socket } from "socket.io-client";
+import { Button } from "@repo/shared-ui/buttons/button";
 
 type Message = string;
 

@@ -16,6 +16,7 @@
 		"@repo/shared-utils": "workspace:*",
 		"@repo/shared-validator": "workspace:*",
 		"@repo/shared-mail": "workspace:*",
+		"@repo/shared-types": "workspace:*",
 		"bcryptjs": "^3.0.2",
 		"hono": "^4.7.11"
 	},

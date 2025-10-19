@@ -1,4 +1,4 @@
-import { getCookie, setCookie } from "hono/cookie";
+import { getCookie, setCookie, deleteCookie } from "hono/cookie";
 import { type Context } from "hono";
 import { jwtSignUser, jwtVerifyUser } from "@repo/shared-jwt";
 import { cookieAgeUser, cookieKeyUser } from "@repo/config-static";
@@ -16,13 +16,20 @@ export async function onUpdateCookieUser({ ctx }: { ctx: Context }) {
 
 export async function onValidateCookieUser({ ctx }: { ctx: Context }) {
 	const tokenUser = getCookie(ctx, cookieKeyUser);
-
-	if (!tokenUser) return null;
+	if (!tokenUser) return;
 
 	const validToken = await jwtVerifyUser({ token: tokenUser });
-	if (typeof validToken?.id !== "number") return null;
+
+	if (typeof validToken?.id !== "number") {
+		deleteCookie(ctx, cookieKeyUser);
+		return;
+	}
 
 	const user = await modelUserGetById(validToken.id);
-
+	if (!user) {
+		deleteCookie(ctx, cookieKeyUser);
+		return;
+	}
+	onUpdateCookieUser({ ctx });
 	return user;
 }

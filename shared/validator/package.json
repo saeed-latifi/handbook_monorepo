@@ -10,6 +10,7 @@
 	"dependencies": {
 		"@repo/config-static": "workspace:*",
 		"@repo/shared-utils": "workspace:*",
+		"@repo/shared-types": "workspace:*",
 		"typebox": "^1.0.37"
 	},
 	"devDependencies": {

@@ -2,6 +2,9 @@
 	"extends": "@repo/config-ts/config",
 
 	"compilerOptions": {
-		"types": ["vinxi/types/client"]
+		"types": ["vinxi/types/client"],
+		"paths": {
+			"~/*": ["./src/*"]
+		}
 	}
 }

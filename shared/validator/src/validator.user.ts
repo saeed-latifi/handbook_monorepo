@@ -1,5 +1,5 @@
-import { UserRole } from "@repo/config-static";
 import Type from "typebox";
+import { UserRole } from "@repo/shared-types/types";
 
 // Base User Schema
 const UserSchema = Type.Object({

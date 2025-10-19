@@ -6,19 +6,25 @@
 	],
 	"main": "./src/index.ts",
 	"exports": {
-		".": "./src/index.ts",
-		"./button": "./src/components/button.tsx"
+		"./commons/*": "./src/commons/*.tsx",
+		"./icons/*": "./src/icons/*.tsx",
+		"./cards/*": "./src/cards/*.tsx",
+		"./forms/*": "./src/forms/*.tsx",
+		"./buttons/*": "./src/buttons/*.tsx",
+		"./animations/*": "./src/animations/*.tsx"
 	},
 	"devDependencies": {
 		"@repo/config-ts": "workspace:*",
 		"@repo/config-eslint": "workspace:*",
 		"@repo/config-tailwind": "workspace:*",
-		"eslint": "^9.21.0"
-	},
-	"dependencies": {
-		"solid-js": "^1.9.5",
+		"eslint": "^9.21.0",
 		"tailwindcss": "^4.0.9",
 		"clsx": "^2.1.1",
 		"tailwind-merge": "^3.0.1"
-	}
+	},
+	"peerDependencies": {
+		"@solidjs/router": "^0.15.0",
+		"solid-js": "^1.9.5"
+	},
+	"dependencies": {}
 }

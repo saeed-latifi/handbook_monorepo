@@ -2,31 +2,33 @@ import { cookieAgeSession, cookieKeySession, cookieKeyUser } from "@repo/config-
 import { modelSessionCreate } from "@repo/shared-db";
 import { jwtSignSession } from "@repo/shared-jwt";
 import type { Context } from "hono";
-import { deleteCookie, getCookie, setCookie } from "hono/cookie";
+import { deleteCookie, setCookie } from "hono/cookie";
 
 export async function onBadPublicToken(ctx: Context) {
-	deleteCookie(ctx, cookieKeySession);
 	deleteCookie(ctx, cookieKeyUser);
+	deleteCookie(ctx, cookieKeySession);
 	return onCreatePublicToken(ctx);
 }
 
 export async function onCreatePublicToken(ctx: Context) {
-	const ip = ctx.req.header("x-forwarded-for") || ctx.req.header("x-real-ip") || "unknown";
-
 	deleteCookie(ctx, cookieKeyUser);
 
+	// TODO
+	const ip = ctx.req.header("x-forwarded-for") || ctx.req.header("x-real-ip") || "in develop";
+	if (!ip) return;
+
 	const session = await modelSessionCreate({ ip });
+
 	if (!session) return;
 
 	const jwt = await jwtSignSession({ id: session.id, ip });
-
-	console.log("create session!");
 	setCookie(ctx, cookieKeySession, jwt, { maxAge: cookieAgeSession });
+
+	console.log("session created!");
 	return session;
 }
 
-export async function onUpdatePublicToken(ctx: Context) {
-	console.log("update session!");
-	const tokenPublic = getCookie(ctx, cookieKeySession);
-	if (tokenPublic) setCookie(ctx, cookieKeySession, tokenPublic, { maxAge: cookieAgeSession });
+export async function onUpdatePublicToken({ ctx, token }: { ctx: Context; token: string }) {
+	console.log("session updated!");
+	setCookie(ctx, cookieKeySession, token, { maxAge: cookieAgeSession });
 }

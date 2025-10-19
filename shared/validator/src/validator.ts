@@ -70,7 +70,7 @@ export function validator<T extends Record<string, any>, S extends TObject>({ da
 function errMessage(error: TLocalizedValidationError): string | null {
 	console.log("error", error);
 
-	return "";
+	return JSON.stringify(error.keyword);
 	if (error.keyword === "required") return null;
 
 	// if (error.type === ValueErrorType.ObjectRequiredProperty) return null;

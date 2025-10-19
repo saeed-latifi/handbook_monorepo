@@ -2,9 +2,10 @@ import type { Context, Next } from "hono";
 import { getCookie } from "hono/cookie";
 import { modelSessionGetById, type ISession } from "@repo/shared-db";
 import { jwtVerifySession } from "@repo/shared-jwt";
-import { cookieKeySession, onResponseServerError } from "@repo/config-static";
-import { onBadPublicToken, onCreatePublicToken } from "../cookie/cookieSession";
+import { cookieKeySession } from "@repo/config-static";
+import { onBadPublicToken, onCreatePublicToken, onUpdatePublicToken } from "../cookie/cookieSession";
 import { serverErrorLogger } from "@repo/shared-logger";
+import { onResponseServerError } from "@repo/shared-types/helpers";
 
 export interface IMiddlewareSession {
 	Variables: { session: ISession; ip: string; isBot: boolean };
@@ -21,18 +22,22 @@ export async function middlewareSession(ctx: Context<IMiddlewareSession>, next: 
 		ctx.set("isBot", !!isBot);
 
 		const sessionCookie = getCookie(ctx, cookieKeySession);
+
 		if (!sessionCookie) {
 			const session = await onCreatePublicToken(ctx);
 			if (!session) throw new Error("error on create new session");
+
 			ctx.set("session", session);
 			await next();
 			return;
 		}
 
 		const validToken = await jwtVerifySession({ token: sessionCookie });
+
 		if (typeof validToken?.id !== "number") {
 			const session = await onBadPublicToken(ctx);
 			if (!session) throw new Error("error on create new session");
+
 			ctx.set("session", session);
 			await next();
 			return;
@@ -41,13 +46,20 @@ export async function middlewareSession(ctx: Context<IMiddlewareSession>, next: 
 		const session = await modelSessionGetById(validToken.id);
 		if (!session) throw new Error("error on find session");
 
+		onUpdatePublicToken({ ctx, token: sessionCookie });
+
 		ctx.set("session", session);
 		await next();
 		return;
 	} catch (error) {
-		serverErrorLogger({ error, domain: "session", title: "bad session" });
+		console.log("on bad token");
+
 		const session = await onBadPublicToken(ctx);
-		if (!session) return ctx.json(onResponseServerError({ message: ["خطا در بازیابی جلسه کاربری"], error }));
+		if (!session) {
+			serverErrorLogger({ error, domain: "session", title: "bad session" });
+			return ctx.json(onResponseServerError({ message: ["خطا در بازیابی جلسه کاربری"], error }));
+		}
+
 		ctx.set("session", session);
 		await next();
 		return;

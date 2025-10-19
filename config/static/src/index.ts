@@ -7,6 +7,9 @@ export const storageRegion = process.env.STORAGE_REGION ?? "";
 export const storageAccessKey = process.env.STORAGE_ACCESS_KEY ?? "";
 export const storageSecretKey = process.env.STORAGE_SECRET_KEY ?? "";
 
+// public storage
+export const storageUrl = process.env.PUBLIC_STORAGE;
+
 // tokens
 export const tokenSession = process.env.TOKEN_SESSION ?? "";
 export const tokenUser = process.env.TOKEN_USER ?? "";
@@ -28,10 +31,6 @@ export const portSocket = 3011;
 // validations
 export const userPasswordLength = 8;
 export const phoneNumberLength = 11;
-
-// types
-export * from "./response.type";
-export * from "./enum.types";
 
 // mail
 export const emailFrom = process.env.EMAIL_FROM;

@@ -1,4 +1,4 @@
-import { UserRole } from "@repo/config-static";
+import { UserRole } from "./enums";
 import { modelUserCreate, modelUserGetList } from "./models";
 
 export async function seedRootUser({ password }: { password: string }) {
