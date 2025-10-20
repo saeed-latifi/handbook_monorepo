@@ -43,9 +43,9 @@ export function useAccount() {
 		}
 	}
 
-	async function onForget(phone?: string) {
+	async function onForget(email?: string) {
 		try {
-			const { data } = await http.post<IResponse<IUser>>("/account/forget", { phone });
+			const { data } = await http.post<IResponse<IUser>>("/account/forget", { email });
 
 			// TODO 			mutateResponse({ ...cleaned, ...response?.data });
 			mutate(data);

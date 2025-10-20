@@ -74,7 +74,7 @@ accountRoutes.post("/forget", async (ctx) => {
 		const user = await modelUserChangePasswordByMail({ password: hash, email });
 		if (!user) return ctx.json(onResponseServerError({ error: "مشکل در بازیابی کاربر", message: ["مشکل در بازیابی کاربر"] }));
 
-		const res = await sendForgetPasswordMail({ email });
+		const res = await sendForgetPasswordMail({ email, password: rawPassword });
 		if (!res) onResponseServerError({ error: "خطا در ارسال ایمیل" });
 
 		return ctx.json(onResponseNoAccount({ messages: ["رمز جدید با موفقیت برای شما ارسال شد"] }));

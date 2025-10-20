@@ -1,3 +1,6 @@
+//app state "prod" | "dev"
+export const appState = process.env.APP_STATE ?? "";
+
 // db
 export const dbURL = process.env.DATABASE_URL ?? "";
 
@@ -34,7 +37,6 @@ export const phoneNumberLength = 11;
 
 // mail
 export const emailFrom = process.env.EMAIL_FROM;
-export const mailPort = parseInt(process.env.EMAIL_PORT ?? "");
 export const emailUser = process.env.EMAIL_USER;
 export const emailPassword = process.env.EMAIL_PASSWORD;
 export const emailHost = process.env.EMAIL_HOST;
