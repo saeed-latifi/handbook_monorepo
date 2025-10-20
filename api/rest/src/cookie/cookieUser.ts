@@ -6,12 +6,12 @@ import { modelUserGetById } from "@repo/shared-db";
 
 export async function onCreateCookieUser({ ctx, user }: { ctx: Context; user: { id: number; name: string } }) {
 	const tokenUser = await jwtSignUser({ name: user.name, id: user.id });
-	setCookie(ctx, cookieKeyUser, tokenUser, { maxAge: cookieAgeUser, sameSite: "none", secure: true, partitioned: true });
+	setCookie(ctx, cookieKeyUser, tokenUser, { maxAge: cookieAgeUser });
 }
 
 export async function onUpdateCookieUser({ ctx }: { ctx: Context }) {
 	const tokenUser = getCookie(ctx, cookieKeyUser);
-	if (tokenUser) setCookie(ctx, cookieKeyUser, tokenUser, { maxAge: cookieAgeUser, sameSite: "none", secure: true, partitioned: true });
+	if (tokenUser) setCookie(ctx, cookieKeyUser, tokenUser, { maxAge: cookieAgeUser });
 }
 
 export async function onValidateCookieUser({ ctx }: { ctx: Context }) {

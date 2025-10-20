@@ -1,9 +1,8 @@
 import { Compile } from "typebox/compile";
 import Format from "typebox/format";
-// import { digitFixer } from "./textFixer";
 import type { Static, TObject } from "typebox";
-import type { TLocalizedValidationError } from "typebox/error";
 import { phoneNumberLength } from "@repo/config-static";
+import { digitFixer } from "@repo/shared-utils";
 
 export const formats = {
 	number: /^[0-9]+$/,
@@ -15,6 +14,10 @@ export const formats = {
 
 type validation<T> = { isValid: false; errors: { [key: string]: string[] } } | { isValid: true; data: T };
 export function validator<T extends Record<string, any>, S extends TObject>({ data, schema }: { data: T; schema: S }): validation<Static<typeof schema>> {
+	if (typeof data !== "object" || data === null) {
+		return { isValid: false, errors: { base: ["data is not in correct order"] } };
+	}
+
 	Format.Set("persian", (item) => formats.persian.test(item));
 	Format.Set("english", (item) => formats.english.test(item));
 	Format.Set("number", (item) => formats.number.test(item));
@@ -37,96 +40,151 @@ export function validator<T extends Record<string, any>, S extends TObject>({ da
 		}
 
 		if (typeof data[key] === "string") {
-			console.log(schema?.properties?.[key]);
-
-			// let text = digitFixer(data[key]);
-			// if (schema?.properties?.[key]?.format === "mobile") text = text.match(/\d+/g)?.join("") ?? text;
-			// (data as any)[key] = text;
+			let text = digitFixer(data[key]);
+			if ((schema?.properties?.[key] as any)?.format === "mobile") text = text.match(/\d+/g)?.join("") ?? text;
+			(data as any)[key] = text;
 		}
 	}
 
 	const validations: { [key: string]: string[] } = {};
 	const compiled = Compile(schema);
-	const errors = [...compiled.Errors(data)];
+
+	const errors = compiled.Errors(data);
 
 	if (errors.length) {
 		errors.forEach((e) => {
-			const message = errMessage(e);
-			if (!message) return;
+			const keyword = e.keyword;
+			const key = e.instancePath.substring(1);
 
-			if (!validations[e.schemaPath.substring(1)]) validations[e.schemaPath.substring(1)] = [message];
-			else {
-				const exist = validations[e.schemaPath.substring(1)]?.find((i) => i === message);
-				if (!exist) validations[e.schemaPath.substring(1)]?.push(message);
+			if (keyword === "required") {
+				e.params.requiredProperties.forEach((i) => {
+					if (!validations[i]) validations[i] = [e.message];
+					else validations[i].push(e.message);
+				});
+			} else {
+				if (keyword === "type") {
+					if (typeof e.params.type === "string") {
+						const errorMessage = typeError(e.params.type);
+
+						if (!validations[key]) validations[key] = [errorMessage];
+						else validations[key].push(errorMessage);
+					} else {
+						// TODO log exception
+						console.log("error string[] params type");
+					}
+				} else {
+					if (!validations[key]) validations[key] = [errMessage(keyword, e.params)];
+					else validations[key].push(errMessage(keyword, e.params));
+
+					// errMessage(e.keyword, e.params);
+				}
 			}
 		});
 
 		return { errors: validations, isValid: false };
 	}
 
-	return { data: data as Static<typeof schema>, isValid: true };
+	return { data: compiled.Clean(data) as Static<typeof schema>, isValid: true };
 }
 
-function errMessage(error: TLocalizedValidationError): string | null {
-	console.log("error", error);
+function typeError(type: string) {
+	switch (type) {
+		case "string":
+			return "لطفاً مقدار را به صورت نوشتاری وارد نمایید";
 
-	return JSON.stringify(error.keyword);
-	if (error.keyword === "required") return null;
+		case "integer":
+		case "number":
+			return "لطفاً مقدار را به صورت عددی وارد نمایید";
 
-	// if (error.type === ValueErrorType.ObjectRequiredProperty) return null;
-	// if (error.schema.error) return error.schema.error;
+		case "array":
+			return "لطفاً لیست مقادیر را وارد نمایید";
 
-	// switch (error.type) {
-	// 	case ValueErrorType.Object:
-	// 		if (error.schema.error) return error.schema.error;
-	// 		return "بسته مقادیر ناشناس";
+		case "union":
+		case "enum":
+		case "boolean":
+			return "لطفاً یک گزینه را انتخاب نمایید";
 
-	// 	case ValueErrorType.Number:
-	// 	case ValueErrorType.Integer:
-	// 		return "لطفاً مقدار را به صورت عددی وارد نمایید";
-
-	// 	case ValueErrorType.NumberMaximum:
-	// 	case ValueErrorType.IntegerMaximum:
-	// 		return `حداکثر مقدار قابل قبول ${error.schema.maximum} است.`;
-
-	// 	case ValueErrorType.NumberMinimum:
-	// 	case ValueErrorType.IntegerMinimum:
-	// 		return `حداقل مقدار قابل قبول ${error.schema.minimum} است.`;
-
-	// 	case ValueErrorType.String:
-	// 		return "اطلاعات این فیلد را تکمیل نمایید";
-	// 	case ValueErrorType.StringMaxLength:
-	// 		return `اطلاعات وارد شده بلند است. کمتر از ${error.schema.minLength} کاراکتر وارد نمایید.`;
-	// 	case ValueErrorType.StringMinLength:
-	// 		return `اطلاعات وارد شده کوتاه است. بیش از ${error.schema.minLength} کاراکتر وارد نمایید.`;
-	// 	case ValueErrorType.StringFormat:
-	// 		switch (error.schema.format) {
-	// 			case "persian":
-	// 				return "لطفاً اطلاعات این فیلد را فقط با استفاده از حروف فارسی وارد نمایید";
-	// 			case "english":
-	// 				return "فقط می‌توانید از حروف انگلیسی، اعداد و کاراکتر '-' در میان استفاده نمایید.";
-	// 			case "number":
-	// 				return "لطفاً تنها از اعداد استفاده نمایید";
-	// 			default:
-	// 				return "لطفاً با الگوی صحیح ارسال نمایید";
-	// 			case "mobile":
-	// 				return "لطفاً شماره موبایل را به صورت صحیح وارد نمایید";
-
-	// 			case "date-time":
-	// 				return "تاریخ را به صورت صحیح وارد نمایید";
-	// 		}
-
-	// 	case ValueErrorType.Boolean:
-	// 		return "لطفاً یک گزینه را انتخاب نمایید";
-	// 	case ValueErrorType.Array:
-	// 		return "لطفاً لیست مقادیر را وارد نمایید";
-	// 	case ValueErrorType.Union:
-	// 		return "لطفاً از میان گزینه ها انتخاب نمایید ";
-
-	// 	case ValueErrorType.Intersect:
-	// 		return null;
-
-	// 	default:
-	// 		return `خطای ناشناس : ${error.message} ${error.type} ${error.value}`;
-	// }
+		default:
+			return `لطفاً مقدار را به صورت ${type} وارد نمایید`;
+	}
 }
+
+function errMessage(keyword: keywords, params: any) {
+	switch (keyword) {
+		case "additionalProperties":
+			return "بسته مقادیر ناشناس";
+
+		case "maximum":
+			return `حداکثر مقدار قابل قبول ${params.limit} است.`;
+
+		case "minimum":
+			return `حداقل مقدار قابل قبول ${params.limit} است.`;
+
+		case "maxLength":
+			return `اطلاعات وارد شده بلند است. کمتر از ${params.limit} کاراکتر وارد نمایید.`;
+		case "minLength":
+			return `اطلاعات وارد شده کوتاه است. بیش از ${params.limit} کاراکتر وارد نمایید.`;
+
+		case "format":
+			switch (params.format) {
+				case "persian":
+					return "لطفاً اطلاعات این فیلد را فقط با استفاده از حروف فارسی وارد نمایید";
+
+				case "english":
+					return "فقط می‌توانید از حروف انگلیسی، اعداد و کاراکتر '-' در میان استفاده نمایید.";
+
+				case "number":
+					return "لطفاً تنها از اعداد استفاده نمایید";
+
+				default:
+					return "لطفاً با الگوی صحیح ارسال نمایید";
+
+				case "mobile":
+					return "لطفاً شماره موبایل را به صورت صحیح وارد نمایید";
+
+				case "date-time":
+					return "تاریخ را به صورت صحیح وارد نمایید";
+			}
+
+		case "enum":
+		case "boolean":
+			return "لطفاً یک گزینه را انتخاب نمایید";
+
+		default:
+			return `خطای ناشناس : ${keyword} ${JSON.stringify({ params })} `;
+	}
+}
+
+type keywords =
+	| "boolean"
+	| "format"
+	| "additionalProperties"
+	| "anyOf"
+	| "const"
+	| "contains"
+	| "dependencies"
+	| "dependentRequired"
+	| "enum"
+	| "exclusiveMaximum"
+	| "exclusiveMinimum"
+	| "~guard"
+	| "if"
+	| "maximum"
+	| "maxItems"
+	| "maxLength"
+	| "maxProperties"
+	| "minimum"
+	| "minItems"
+	| "minLength"
+	| "minProperties"
+	| "multipleOf"
+	| "not"
+	| "oneOf"
+	| "pattern"
+	| "propertyNames"
+	| "~refine"
+	| "required"
+	| "type"
+	| "unevaluatedItems"
+	| "unevaluatedProperties"
+	| "uniqueItems";

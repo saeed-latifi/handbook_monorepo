@@ -19,7 +19,7 @@ export function AuthChecker(props: { children: JSXElement }) {
 
 	return (
 		<Switch fallback={<div class="bg-green-400 w-full p-8 flex flex-col in-checked: justify-center">initializing ...</div>}>
-			<Match when={!isReady() || dataState().isLoading || dataState().isValidating}>
+			<Match when={!isReady() || !dataState().initialized || dataState().isLoading || dataState().isValidating}>
 				<CardCenter>
 					<LoadingSpinner />
 				</CardCenter>
