@@ -7,7 +7,18 @@
 		"start": "tsx src/index.ts"
 	},
 	"dependencies": {
-		"socket.io": "^4.8.1"
+		"@socket.io/admin-ui": "^0.5.1",
+		"cookie": "^1.0.2",
+		"socket.io": "^4.8.1",
+		"@repo/config-static": "workspace:*",
+		"@repo/shared-db": "workspace:*",
+		"@repo/shared-jwt": "workspace:*",
+		"@repo/shared-logger": "workspace:*",
+		"@repo/shared-storage": "workspace:*",
+		"@repo/shared-utils": "workspace:*",
+		"@repo/shared-validator": "workspace:*",
+		"@repo/shared-types": "workspace:*",
+		"bcryptjs": "^3.0.2"
 	},
 	"devDependencies": {
 		"@repo/config-ts": "workspace:*",

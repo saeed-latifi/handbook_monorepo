@@ -1,4 +1,4 @@
 import axios from "axios";
-import { apiURL } from "./statics";
+import { restURL } from "./statics";
 
-export const http = axios.create({ baseURL: apiURL, headers: { "Content-Type": "application/json" }, withCredentials: true });
+export const http = axios.create({ baseURL: restURL, headers: { "Content-Type": "application/json" }, withCredentials: true });

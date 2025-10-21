@@ -8,7 +8,7 @@ import { serverErrorLogger } from "@repo/shared-logger";
 import { onResponseServerError } from "@repo/shared-types/helpers";
 
 export interface IMiddlewareSession {
-	Variables: { session: ISession; ip: string; isBot: boolean };
+	Variables: { session: ISession; ip: string; isBot: boolean; fixed?: boolean };
 }
 
 export async function middlewareSession(ctx: Context<IMiddlewareSession>, next: Next) {
@@ -24,6 +24,8 @@ export async function middlewareSession(ctx: Context<IMiddlewareSession>, next: 
 		const sessionCookie = getCookie(ctx, cookieKeySession);
 
 		if (!sessionCookie) {
+			ctx.set("fixed", true);
+
 			const session = await onCreatePublicToken(ctx);
 			if (!session) throw new Error("error on create new session");
 
@@ -35,6 +37,8 @@ export async function middlewareSession(ctx: Context<IMiddlewareSession>, next: 
 		const validToken = await jwtVerifySession({ token: sessionCookie });
 
 		if (typeof validToken?.id !== "number") {
+			ctx.set("fixed", true);
+
 			const session = await onBadPublicToken(ctx);
 			if (!session) throw new Error("error on create new session");
 
@@ -53,6 +57,7 @@ export async function middlewareSession(ctx: Context<IMiddlewareSession>, next: 
 		return;
 	} catch (error) {
 		console.log("on bad token");
+		ctx.set("fixed", true);
 
 		const session = await onBadPublicToken(ctx);
 		if (!session) {

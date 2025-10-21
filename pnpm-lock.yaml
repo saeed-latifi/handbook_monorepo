@@ -75,6 +75,39 @@ importers:
 
   api/socket:
     dependencies:
+      '@repo/config-static':
+        specifier: workspace:*
+        version: link:../../config/static
+      '@repo/shared-db':
+        specifier: workspace:*
+        version: link:../../shared/db
+      '@repo/shared-jwt':
+        specifier: workspace:*
+        version: link:../../shared/jwt
+      '@repo/shared-logger':
+        specifier: workspace:*
+        version: link:../../shared/logger
+      '@repo/shared-storage':
+        specifier: workspace:*
+        version: link:../../shared/storage
+      '@repo/shared-types':
+        specifier: workspace:*
+        version: link:../../shared/types
+      '@repo/shared-utils':
+        specifier: workspace:*
+        version: link:../../shared/utils
+      '@repo/shared-validator':
+        specifier: workspace:*
+        version: link:../../shared/validator
+      '@socket.io/admin-ui':
+        specifier: ^0.5.1
+        version: 0.5.1(socket.io@4.8.1)
+      bcryptjs:
+        specifier: ^3.0.2
+        version: 3.0.2
+      cookie:
+        specifier: ^1.0.2
+        version: 1.0.2
       socket.io:
         specifier: ^4.8.1
         version: 4.8.1
@@ -100,6 +133,9 @@ importers:
       '@repo/shared-ui':
         specifier: workspace:*
         version: link:../../shared/ui
+      '@repo/shared-utils':
+        specifier: workspace:*
+        version: link:../../shared/utils
       '@solidjs/meta':
         specifier: ^0.29.4
         version: 0.29.4(solid-js@1.9.7)
@@ -115,6 +151,9 @@ importers:
       axios:
         specifier: ^1.12.2
         version: 1.12.2
+      socket.io-client:
+        specifier: ^4.7.5
+        version: 4.8.1
       solid-barn:
         specifier: ^0.1.5
         version: 0.1.5(solid-js@1.9.7)
@@ -143,6 +182,9 @@ importers:
       '@repo/shared-ui':
         specifier: workspace:*
         version: link:../../shared/ui
+      '@repo/shared-utils':
+        specifier: workspace:*
+        version: link:../../shared/utils
       '@solidjs/meta':
         specifier: ^0.29.4
         version: 0.29.4(solid-js@1.9.7)
@@ -1714,6 +1756,11 @@ packages:
     resolution: {integrity: sha512-4aUIteuyxtBUhVdiQqcDhKFitwfd9hqoSDYY2KRXiWtgoWJ9Bmise+KfEPDiVHWeJepvF8xJO9/9+WDIciMFFw==}
     engines: {node: '>=18.0.0'}
 
+  '@socket.io/admin-ui@0.5.1':
+    resolution: {integrity: sha512-1dlGL2FGm6T+uL1e6iDvbo2eCINwvW7iVbjIblwh5kPPRM1SP8lmZrbFZf4QNJ/cqQ+JLcx49eXGM9WAB4TK7w==}
+    peerDependencies:
+      socket.io: '>=3.1.0'
+
   '@socket.io/component-emitter@3.1.2':
     resolution: {integrity: sha512-9BCxFwvbGg/RsZK9tjXd8s4UcwR0MWeFQ1XEKIQVVvAGJyINdrqKMcTRyLoK8Rse1GjzLV9cwjWV1olXRWEXVA==}
 
@@ -1850,6 +1897,9 @@ packages:
 
   '@types/babel__traverse@7.20.7':
     resolution: {integrity: sha512-dkO5fhS7+/oos4ciWxyEyjWe48zmG6wbCheo/G2ZnHx4fs3EU6YC6UM8rk56gAjNJ9P3MTH2jo5jb92/K6wbng==}
+
+  '@types/bcryptjs@2.4.6':
+    resolution: {integrity: sha512-9xlo6R2qDs5uixm0bcIqCeMCE6HiQsIyel9KQySStiyqNl2tnj2mP3DX1Nf56MD6KMenNNlBBsy3LJ7gUEQPXQ==}
 
   '@types/braces@3.0.5':
     resolution: {integrity: sha512-SQFof9H+LXeWNz8wDe7oN5zu7ket0qwMu5vZubW4GCJ8Kkeh6nBWUz87+KTz/G3Kqsrp0j/W253XJb3KMEeg3w==}
@@ -2148,6 +2198,9 @@ packages:
   base64id@2.0.0:
     resolution: {integrity: sha512-lGe34o6EHj9y3Kts9R4ZYs/Gr+6N7MCaMlIFA3F1R2O5/m7K06AxfSeO5530PEERE6/WyEg3lsuyw4GHlPZHog==}
     engines: {node: ^4.5.0 || >= 5.9}
+
+  bcryptjs@2.4.3:
+    resolution: {integrity: sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==}
 
   bcryptjs@3.0.2:
     resolution: {integrity: sha512-k38b3XOZKv60C4E2hVsXTolJWfkGRMbILBIe2IBITXciy5bOsTKot5kDrf3ZfufQtQOUN5mXceUEpU1rTl9Uog==}
@@ -6671,6 +6724,15 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
+  '@socket.io/admin-ui@0.5.1(socket.io@4.8.1)':
+    dependencies:
+      '@types/bcryptjs': 2.4.6
+      bcryptjs: 2.4.3
+      debug: 4.3.7
+      socket.io: 4.8.1
+    transitivePeerDependencies:
+      - supports-color
+
   '@socket.io/component-emitter@3.1.2': {}
 
   '@solidjs/meta@0.29.4(solid-js@1.9.7)':
@@ -6837,6 +6899,8 @@ snapshots:
   '@types/babel__traverse@7.20.7':
     dependencies:
       '@babel/types': 7.27.6
+
+  '@types/bcryptjs@2.4.6': {}
 
   '@types/braces@3.0.5': {}
 
@@ -7246,6 +7310,8 @@ snapshots:
   base64-js@1.5.1: {}
 
   base64id@2.0.0: {}
+
+  bcryptjs@2.4.3: {}
 
   bcryptjs@3.0.2: {}
 

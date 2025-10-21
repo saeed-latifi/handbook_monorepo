@@ -9,11 +9,13 @@
 	"dependencies": {
 		"@repo/shared-types": "workspace:*",
 		"@repo/shared-ui": "workspace:*",
+		"@repo/shared-utils": "workspace:*",
 		"@solidjs/meta": "^0.29.4",
 		"@solidjs/router": "^0.15.0",
 		"@solidjs/start": "^1.1.0",
 		"@tailwindcss/vite": "^4.0.9",
 		"axios": "^1.12.2",
+		"socket.io-client": "^4.7.5",
 		"solid-barn": "^0.1.5",
 		"solid-js": "^1.9.5",
 		"tailwindcss": "^4.0.9",

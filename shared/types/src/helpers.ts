@@ -11,10 +11,11 @@ export function onResponseOk<T, X>({ data, metadata, message, length }: { data: 
 	return response;
 }
 
-export function onResponseNoAccount({ messages }: { messages?: string[] }) {
-	const response: IResponse = {
+export function onResponseNoAccount<X>({ messages, metadata }: { messages?: string[]; metadata?: X }) {
+	const response: IResponse<undefined, X> = {
 		responseState: ResponseStates.NoAccount,
 		messages: { noAccount: ["لطفا ابتدا وارد شوید"], success: messages },
+		metadata,
 	};
 	return response;
 }

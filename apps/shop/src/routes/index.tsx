@@ -1,32 +1,41 @@
 import { Title } from "@solidjs/meta";
-
-import { createResource, createSignal, onMount } from "solid-js";
-import { io, Socket } from "socket.io-client";
+import { createSignal, onMount } from "solid-js";
 import { Button } from "@repo/shared-ui/buttons/button";
+import useSocket from "../hooks/useSocket";
+import { io, type Socket } from "socket.io-client";
 
 type Message = string;
 
 export default function Home() {
 	const [input, setInput] = createSignal("");
 	const [messages, setMessages] = createSignal<Message[]>([]);
+	const { socket, onEmit } = useSocket();
+	// const socket: Socket = io("http://localhost:3011", { withCredentials: true });
 
-	const socket: Socket = io("http://localhost:3011");
 	onMount(() => {
-		socket.on("chat", (msg: Message) => {
-			setMessages((prev) => [...prev, msg]);
+		console.log("mounted");
+
+		socket.on("receiveMessage", (msg: Message) => {
+			console.log({ msg });
+
+			setMessages((prev) => [msg, ...prev]);
 		});
 	});
 
 	function sendMessage() {
 		const trimmed = input().trim();
 		if (trimmed) {
-			socket.emit("chat", trimmed);
+			onEmit({ path: "createMessage", args: { message: trimmed, roomId: 1 } });
 			setInput("");
 		}
+		// if (trimmed) {
+		// 	socket.emit("chat", trimmed);
+		// 	setInput("");
+		// }
 	}
 
 	async function fetchSample() {
-		const response = await fetch("http://localhost:3010");
+		const response = await fetch("http://localhost:3010/api/public/test");
 		const data = await response.json();
 		console.log({ data });
 	}

@@ -8,8 +8,9 @@ import { loginValidator, validator } from "@repo/shared-validator";
 import { onCreateCookieUser, onValidateCookieUser } from "../../cookie/cookieUser";
 import { sendForgetPasswordMail } from "@repo/shared-mail";
 import { onResponseNoAccount, onResponseOk, onResponseServerError, onResponseValidations } from "@repo/shared-types/helpers";
+import type { IMiddlewareSession } from "../../middlewares/middlewareSession";
 
-export const accountRoutes = new Hono();
+export const accountRoutes = new Hono<IMiddlewareSession>();
 
 accountRoutes.post("/login", async (ctx) => {
 	try {
@@ -38,10 +39,12 @@ accountRoutes.post("/login", async (ctx) => {
 
 accountRoutes.get("/check", async (ctx) => {
 	try {
-		const user = await onValidateCookieUser({ ctx });
-		if (!user) return ctx.json(onResponseNoAccount({}));
+		const fixed = ctx.get("fixed");
 
-		return ctx.json(onResponseOk({ data: user }));
+		const user = await onValidateCookieUser({ ctx });
+		if (!user) return ctx.json(onResponseNoAccount({ metadata: { fixed } }));
+
+		return ctx.json(onResponseOk({ data: user, metadata: { fixed } }));
 	} catch (error) {
 		return ctx.json(onResponseServerError({ error }));
 	}

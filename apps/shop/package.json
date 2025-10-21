@@ -8,18 +8,19 @@
 	},
 	"dependencies": {
 		"@repo/shared-ui": "workspace:*",
+		"@repo/shared-utils": "workspace:*",
 		"@solidjs/meta": "^0.29.4",
 		"@solidjs/router": "^0.15.0",
 		"@solidjs/start": "^1.1.0",
-		"solid-js": "^1.9.5",
-		"vinxi": "^0.5.3",
-		"tailwindcss": "^4.0.9",
 		"@tailwindcss/vite": "^4.0.9",
-		"socket.io-client": "^4.7.5"
+		"socket.io-client": "^4.7.5",
+		"solid-js": "^1.9.5",
+		"tailwindcss": "^4.0.9",
+		"vinxi": "^0.5.3"
 	},
 	"devDependencies": {
-		"@repo/config-ts": "workspace:*",
 		"@repo/config-eslint": "workspace:*",
-		"@repo/config-tailwind": "workspace:*"
+		"@repo/config-tailwind": "workspace:*",
+		"@repo/config-ts": "workspace:*"
 	}
 }
